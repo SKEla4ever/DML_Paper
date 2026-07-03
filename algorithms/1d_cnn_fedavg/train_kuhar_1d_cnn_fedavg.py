@@ -72,6 +72,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--momentum", type=float, default=0.0)
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument("--optimizer", choices=("sgd", "adam"), default="sgd")
+    parser.add_argument(
+        "--norm",
+        choices=("batchnorm", "groupnorm", "none"),
+        default="batchnorm",
+        help="Normalization layer used after each Conv1d block.",
+    )
+    parser.add_argument("--groupnorm-groups", type=int, default=8)
     parser.add_argument("--eval-every", type=int, default=1)
     parser.add_argument("--seed", type=int, default=20260615)
     parser.add_argument(
@@ -302,19 +309,30 @@ def choose_device(requested: str):
     return torch.device("cpu")
 
 
-def build_model(num_classes: int):
+def normalization_layer(channels: int, args: argparse.Namespace):
+    if args.norm == "batchnorm":
+        return nn.BatchNorm1d(channels)
+    if args.norm == "groupnorm":
+        groups = min(args.groupnorm_groups, channels)
+        while channels % groups != 0:
+            groups -= 1
+        return nn.GroupNorm(groups, channels)
+    return nn.Identity()
+
+
+def build_model(num_classes: int, args: argparse.Namespace):
     require_torch()
     return nn.Sequential(
         nn.Conv1d(3, 32, kernel_size=7, padding=3, bias=False),
-        nn.BatchNorm1d(32),
+        normalization_layer(32, args),
         nn.ReLU(),
         nn.MaxPool1d(2),
         nn.Conv1d(32, 64, kernel_size=5, padding=2, bias=False),
-        nn.BatchNorm1d(64),
+        normalization_layer(64, args),
         nn.ReLU(),
         nn.MaxPool1d(2),
         nn.Conv1d(64, 64, kernel_size=3, padding=1, bias=False),
-        nn.BatchNorm1d(64),
+        normalization_layer(64, args),
         nn.ReLU(),
         nn.AdaptiveAvgPool1d(1),
         nn.Flatten(),
@@ -353,7 +371,7 @@ def train_local_model(
     round_index: int,
     client_id: str,
 ) -> dict[str, object]:
-    model = build_model(num_classes).to(device)
+    model = build_model(num_classes, args).to(device)
     model.load_state_dict(global_state)
     model.train()
     optimizer = make_optimizer(model, args)
@@ -586,7 +604,7 @@ def train_fedavg(
     x_tensor = torch.from_numpy(windows)
     y_tensor = torch.from_numpy(y)
     num_classes = int(y.max()) + 1
-    global_model = build_model(num_classes).to(device)
+    global_model = build_model(num_classes, args).to(device)
     parameter_bytes = state_payload_bytes(global_model)
     parameter_count = int(sum(p.numel() for p in global_model.parameters()))
 
@@ -719,6 +737,8 @@ def main() -> None:
         "momentum": args.momentum,
         "weight_decay": args.weight_decay,
         "optimizer": args.optimizer,
+        "norm": args.norm,
+        "groupnorm_groups": args.groupnorm_groups,
         "eval_every": args.eval_every,
         "seed": args.seed,
         "device": args.device,

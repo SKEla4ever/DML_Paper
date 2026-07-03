@@ -73,10 +73,9 @@ Round 20:
 ## Notes
 
 This is a real neural FedAvg run, but it should still be treated as a first
-checkpoint rather than a tuned final baseline. It currently underperforms the
-softmax sanity baseline on test Macro-F1, likely because this first CNN setup
-uses un-tuned local optimization and aggregates BatchNorm statistics through
-plain FedAvg.
+checkpoint rather than a tuned final baseline. A follow-up tuning pass found
+that this 20-round checkpoint was under-trained; see
+`kuhar_1d_cnn_fedavg_tuning_v1.md`.
 
 Next tuning targets:
 

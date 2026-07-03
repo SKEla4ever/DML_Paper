@@ -14,6 +14,18 @@ First completed checkpoint:
 
 `kuhar_delivery/reports/kuhar/kuhar_1d_cnn_fedavg_baseline_v1.md`
 
+## Tuning Grid
+
+```bash
+python3 algorithms/1d_cnn_fedavg/run_tuning_grid.py \
+  --rounds 20 \
+  --eval-every 5 \
+  --output-root outputs/kuhar_1d_cnn_fedavg_tuning_v1
+```
+
+The grid compares `BatchNorm` and `GroupNorm`, `Adam` and `SGD`, and a small
+learning-rate set. Selection should use validation metrics only.
+
 ## Dependency
 
 This method requires PyTorch.
