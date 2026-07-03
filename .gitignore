@@ -1,0 +1,29 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local environments and caches
+.venv/
+.mypy_cache/
+.pytest_cache/
+
+# Raw datasets and generated experiment outputs
+kuhar_delivery/data/raw/
+outputs/
+
+# Intermediate manifest-generation trials; keep the frozen delivery folder.
+kuhar_artifacts_run*/
+kuhar_artifacts_repeat/
+kuhar_artifacts_v1/
+kuhar_artifacts_v1_repeat/
+kuhar_artifacts_final/
+kuhar_audit_tmp.py
+/generate_kuhar_manifest.py
+spreadsheet_work/
+
+# Large model artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz

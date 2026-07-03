@@ -1,0 +1,1838 @@
+{
+  "allocation": {
+    "accepted_moves": 320,
+    "changes_by_pass": [
+      160,
+      66,
+      43,
+      25,
+      17,
+      5,
+      2,
+      2,
+      0
+    ],
+    "client_class_weight": 0.5,
+    "client_total_weight": 1.0,
+    "global_class_weight": 176.0,
+    "maximum_class_absolute_ratio_deviation": 0.05792349726775958,
+    "method": "support reservations plus deterministic joint greedy allocation and coordinate refinement",
+    "minimum_class_weight": 100.0,
+    "minimum_support_maximum_class_absolute_ratio_deviation": 0.06490566037735845,
+    "minimum_support_split_ratios": {
+      "test": 0.20679533279518603,
+      "train": 0.6000587069787922,
+      "validation": 0.19314596022602187
+    },
+    "minimum_support_split_windows": {
+      "test": 2818,
+      "train": 8177,
+      "validation": 2632
+    },
+    "minimum_support_total_windows": 13627,
+    "objective": "2*N_clients*full_class_ratio_error + 2*N_minimum_clients*minimum_cohort_class_ratio_error + client_total_ratio_error + 0.5*client_class_ratio_error",
+    "refinement_passes": 9,
+    "split_ratios": {
+      "test": 0.1889924138282165,
+      "train": 0.628837635558271,
+      "validation": 0.18216995061351254
+    },
+    "split_recordings": {
+      "test": 389,
+      "train": 1158,
+      "validation": 391
+    },
+    "split_windows": {
+      "test": 3712,
+      "train": 12351,
+      "validation": 3578
+    },
+    "support_reservation_count": 162,
+    "support_reservations": [
+      {
+        "activity_id": 0,
+        "subject_id": "1002",
+        "test_recording_id": "0.Stand/1002_A_6.csv",
+        "train_recording_id": "0.Stand/1002_A_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1002",
+        "test_recording_id": "3.Talk-stand/1002_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1002_D_6.csv"
+      },
+      {
+        "activity_id": 1,
+        "subject_id": "1002",
+        "test_recording_id": "1.Sit/1002_B_6.csv",
+        "train_recording_id": "1.Sit/1002_B_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1003",
+        "test_recording_id": "4.Stand-sit/1003_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1003_E_5.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1003",
+        "test_recording_id": "10.Sit-up/1003_K_1.csv",
+        "train_recording_id": "10.Sit-up/1003_K_2.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1003",
+        "test_recording_id": "8.Jump/1003_I_2.csv",
+        "train_recording_id": "8.Jump/1003_I_1.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1004",
+        "test_recording_id": "5.Lay/1004_F_1.csv",
+        "train_recording_id": "5.Lay/1004_F_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1004",
+        "test_recording_id": "4.Stand-sit/1004_E_1.csv",
+        "train_recording_id": "4.Stand-sit/1004_E_3.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1004",
+        "test_recording_id": "11.Walk/1004_L_1.csv",
+        "train_recording_id": "11.Walk/1004_L_5.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1006",
+        "test_recording_id": "6.Lay-stand/1006_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1006_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1006",
+        "test_recording_id": "4.Stand-sit/1006_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1006_E_1.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1006",
+        "test_recording_id": "10.Sit-up/1006_K_1.csv",
+        "train_recording_id": "10.Sit-up/1006_K_2.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1008",
+        "test_recording_id": "3.Talk-stand/1008_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1008_D_6.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1008",
+        "test_recording_id": "0.Stand/1008_A_6.csv",
+        "train_recording_id": "0.Stand/1008_A_1.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1008",
+        "test_recording_id": "5.Lay/1008_F_1.csv",
+        "train_recording_id": "5.Lay/1008_F_6.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1013",
+        "test_recording_id": "3.Talk-stand/1013_D_1_0.csv",
+        "train_recording_id": "3.Talk-stand/1013_D_1.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1013",
+        "test_recording_id": "2.Talk-sit/1013_C_1.csv",
+        "train_recording_id": "2.Talk-sit/1013_C_1_0.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1013",
+        "test_recording_id": "0.Stand/1013_A_1.csv",
+        "train_recording_id": "0.Stand/1013_A_1_0.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1014",
+        "test_recording_id": "5.Lay/1014_F_2.csv",
+        "train_recording_id": "5.Lay/1014_F_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1014",
+        "test_recording_id": "3.Talk-stand/1014_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1014_D_2.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1014",
+        "test_recording_id": "0.Stand/1014_A_2.csv",
+        "train_recording_id": "0.Stand/1014_A_6.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1015",
+        "test_recording_id": "2.Talk-sit/1015_C_6.csv",
+        "train_recording_id": "2.Talk-sit/1015_C_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1015",
+        "test_recording_id": "3.Talk-stand/1015_D_6.csv",
+        "train_recording_id": "3.Talk-stand/1015_D_1.csv"
+      },
+      {
+        "activity_id": 1,
+        "subject_id": "1015",
+        "test_recording_id": "1.Sit/1015_B_6.csv",
+        "train_recording_id": "1.Sit/1015_B_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1016",
+        "test_recording_id": "6.Lay-stand/1016_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1016_G_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1016",
+        "test_recording_id": "7.Pick/1016_H_2.csv",
+        "train_recording_id": "7.Pick/1016_H_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1016",
+        "test_recording_id": "4.Stand-sit/1016_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1016_E_5.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1017",
+        "test_recording_id": "7.Pick/1017_H_2.csv",
+        "train_recording_id": "7.Pick/1017_H_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1017",
+        "test_recording_id": "6.Lay-stand/1017_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1017_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1017",
+        "test_recording_id": "4.Stand-sit/1017_E_5.csv",
+        "train_recording_id": "4.Stand-sit/1017_E_2.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1018",
+        "test_recording_id": "7.Pick/1018_H_2.csv",
+        "train_recording_id": "7.Pick/1018_H_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1018",
+        "test_recording_id": "6.Lay-stand/1018_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1018_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1018",
+        "test_recording_id": "4.Stand-sit/1018_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1018_E_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1019",
+        "test_recording_id": "6.Lay-stand/1019_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1019_G_2.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1019",
+        "test_recording_id": "7.Pick/1019_H_2.csv",
+        "train_recording_id": "7.Pick/1019_H_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1019",
+        "test_recording_id": "4.Stand-sit/1019_E_5.csv",
+        "train_recording_id": "4.Stand-sit/1019_E_4.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1020",
+        "test_recording_id": "6.Lay-stand/1020_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1020_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1020",
+        "test_recording_id": "4.Stand-sit/1020_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1020_E_2.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1020",
+        "test_recording_id": "7.Pick/1020_H_1.csv",
+        "train_recording_id": "7.Pick/1020_H_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1021",
+        "test_recording_id": "6.Lay-stand/1021_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1021_G_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1021",
+        "test_recording_id": "7.Pick/1021_H_1.csv",
+        "train_recording_id": "7.Pick/1021_H_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1021",
+        "test_recording_id": "4.Stand-sit/1021_E_1.csv",
+        "train_recording_id": "4.Stand-sit/1021_E_4.csv"
+      },
+      {
+        "activity_id": 1,
+        "subject_id": "1022",
+        "test_recording_id": "1.Sit/1022_C_7.csv",
+        "train_recording_id": "1.Sit/1022_B_1.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1022",
+        "test_recording_id": "0.Stand/1022_A_7.csv",
+        "train_recording_id": "0.Stand/1022_A_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1022",
+        "test_recording_id": "3.Talk-stand/1022_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1022_D_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1023",
+        "test_recording_id": "6.Lay-stand/1023_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1023_G_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1023",
+        "test_recording_id": "7.Pick/1023_H_1.csv",
+        "train_recording_id": "7.Pick/1023_H_3.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1023",
+        "test_recording_id": "4.Stand-sit/1023_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1023_E_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1024",
+        "test_recording_id": "7.Pick/1024_H_1.csv",
+        "train_recording_id": "7.Pick/1024_H_2.csv"
+      },
+      {
+        "activity_id": 15,
+        "subject_id": "1024",
+        "test_recording_id": "15.Stair-up/1024_S_1.csv",
+        "train_recording_id": "15.Stair-up/1024_S_1_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1024",
+        "test_recording_id": "6.Lay-stand/1024_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1024_G_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1025",
+        "test_recording_id": "7.Pick/1025_H_1.csv",
+        "train_recording_id": "7.Pick/1025_H_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1025",
+        "test_recording_id": "6.Lay-stand/1025_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1025_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1025",
+        "test_recording_id": "4.Stand-sit/1025_E_4.csv",
+        "train_recording_id": "4.Stand-sit/1025_E_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1026",
+        "test_recording_id": "6.Lay-stand/1026_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1026_G_6.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1026",
+        "test_recording_id": "2.Talk-sit/1026_C_6.csv",
+        "train_recording_id": "2.Talk-sit/1026_C_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1026",
+        "test_recording_id": "3.Talk-stand/1026_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1026_D_6.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1027",
+        "test_recording_id": "7.Pick/1027_H_2.csv",
+        "train_recording_id": "7.Pick/1027_H_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1027",
+        "test_recording_id": "6.Lay-stand/1027_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1027_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1027",
+        "test_recording_id": "4.Stand-sit/1027_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1027_E_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1028",
+        "test_recording_id": "6.Lay-stand/1028_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1028_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1028",
+        "test_recording_id": "4.Stand-sit/1028_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1028_E_5.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1028",
+        "test_recording_id": "8.Jump/1028_I_2.csv",
+        "train_recording_id": "8.Jump/1028_I_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1029",
+        "test_recording_id": "7.Pick/1029_H_2.csv",
+        "train_recording_id": "7.Pick/1029_H_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1029",
+        "test_recording_id": "6.Lay-stand/1029_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1029_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1029",
+        "test_recording_id": "4.Stand-sit/1029_E_5.csv",
+        "train_recording_id": "4.Stand-sit/1029_E_4.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1030",
+        "test_recording_id": "7.Pick/1030_H_1.csv",
+        "train_recording_id": "7.Pick/1030_H_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1030",
+        "test_recording_id": "6.Lay-stand/1030_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1030_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1030",
+        "test_recording_id": "4.Stand-sit/1030_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1030_E_5.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1031",
+        "test_recording_id": "6.Lay-stand/1031_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1031_G_2.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1031",
+        "test_recording_id": "7.Pick/1031_H_2.csv",
+        "train_recording_id": "7.Pick/1031_H_1.csv"
+      },
+      {
+        "activity_id": 12,
+        "subject_id": "1031",
+        "test_recording_id": "12.Walk-backwards/1031_M_2.csv",
+        "train_recording_id": "12.Walk-backwards/1031_M_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1034",
+        "test_recording_id": "3.Talk-stand/1034_D_6.csv",
+        "train_recording_id": "3.Talk-stand/1034_D_1.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1034",
+        "test_recording_id": "5.Lay/1034_F_6.csv",
+        "train_recording_id": "5.Lay/1034_F_1.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1034",
+        "test_recording_id": "2.Talk-sit/1034_C_6.csv",
+        "train_recording_id": "2.Talk-sit/1034_C_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1036",
+        "test_recording_id": "6.Lay-stand/1036_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1036_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1036",
+        "test_recording_id": "4.Stand-sit/1036_E_5.csv",
+        "train_recording_id": "4.Stand-sit/1036_E_4.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1036",
+        "test_recording_id": "11.Walk/1036_L_3.csv",
+        "train_recording_id": "11.Walk/1036_L_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1037",
+        "test_recording_id": "6.Lay-stand/1037_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1037_G_2.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1037",
+        "test_recording_id": "7.Pick/1037_H_1.csv",
+        "train_recording_id": "7.Pick/1037_H_2.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1037",
+        "test_recording_id": "11.Walk/1037_L_4.csv",
+        "train_recording_id": "11.Walk/1037_L_1_0.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1038",
+        "test_recording_id": "6.Lay-stand/1038_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1038_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1038",
+        "test_recording_id": "4.Stand-sit/1038_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1038_E_1.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1038",
+        "test_recording_id": "11.Walk/1038_L_4.csv",
+        "train_recording_id": "11.Walk/1038_L_1.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1039",
+        "test_recording_id": "5.Lay/1039_F_6.csv",
+        "train_recording_id": "5.Lay/1039_F_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1039",
+        "test_recording_id": "3.Talk-stand/1039_D_6.csv",
+        "train_recording_id": "3.Talk-stand/1039_D_1.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1039",
+        "test_recording_id": "2.Talk-sit/1039_C_6.csv",
+        "train_recording_id": "2.Talk-sit/1039_C_1.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1040",
+        "test_recording_id": "2.Talk-sit/1040_C_6.csv",
+        "train_recording_id": "2.Talk-sit/1040_C_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1040",
+        "test_recording_id": "3.Talk-stand/1040_D_6.csv",
+        "train_recording_id": "3.Talk-stand/1040_D_1.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1040",
+        "test_recording_id": "5.Lay/1040_F_6.csv",
+        "train_recording_id": "5.Lay/1040_F_1.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1041",
+        "test_recording_id": "2.Talk-sit/1041_C_1.csv",
+        "train_recording_id": "2.Talk-sit/1041_C_6.csv"
+      },
+      {
+        "activity_id": 1,
+        "subject_id": "1041",
+        "test_recording_id": "1.Sit/1041_B_1.csv",
+        "train_recording_id": "1.Sit/1041_B_6.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1041",
+        "test_recording_id": "0.Stand/1041_A_1.csv",
+        "train_recording_id": "0.Stand/1041_A_6.csv"
+      },
+      {
+        "activity_id": 15,
+        "subject_id": "1042",
+        "test_recording_id": "15.Stair-up/1042_S_1_2.csv",
+        "train_recording_id": "15.Stair-up/1042_S_1.csv"
+      },
+      {
+        "activity_id": 16,
+        "subject_id": "1042",
+        "test_recording_id": "16.Stair-down/1042_T_1_2.csv",
+        "train_recording_id": "16.Stair-down/1042_T_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1042",
+        "test_recording_id": "6.Lay-stand/1042_G_1_0.csv",
+        "train_recording_id": "6.Lay-stand/1042_G_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1043",
+        "test_recording_id": "6.Lay-stand/1043_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1043_G_1.csv"
+      },
+      {
+        "activity_id": 15,
+        "subject_id": "1043",
+        "test_recording_id": "15.Stair-up/1043_S_2.csv",
+        "train_recording_id": "15.Stair-up/1043_S_1.csv"
+      },
+      {
+        "activity_id": 16,
+        "subject_id": "1043",
+        "test_recording_id": "16.Stair-down/1043_T_2.csv",
+        "train_recording_id": "16.Stair-down/1043_T_1.csv"
+      },
+      {
+        "activity_id": 12,
+        "subject_id": "1044",
+        "test_recording_id": "12.Walk-backwards/1044_M_10.csv",
+        "train_recording_id": "12.Walk-backwards/1044_M_1.csv"
+      },
+      {
+        "activity_id": 13,
+        "subject_id": "1044",
+        "test_recording_id": "13.Walk-circle/1044_N_1.csv",
+        "train_recording_id": "13.Walk-circle/1044_N_6.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1044",
+        "test_recording_id": "11.Walk/1044_L_5.csv",
+        "train_recording_id": "11.Walk/1044_L_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1045",
+        "test_recording_id": "7.Pick/1045_H_2.csv",
+        "train_recording_id": "7.Pick/1045_H_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1045",
+        "test_recording_id": "6.Lay-stand/1045_G_1.csv",
+        "train_recording_id": "6.Lay-stand/1045_G_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1045",
+        "test_recording_id": "4.Stand-sit/1045_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1045_E_5.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1046",
+        "test_recording_id": "6.Lay-stand/1046_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1046_G_1.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1046",
+        "test_recording_id": "7.Pick/1046_H_2.csv",
+        "train_recording_id": "7.Pick/1046_H_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1046",
+        "test_recording_id": "4.Stand-sit/1046_E_5.csv",
+        "train_recording_id": "4.Stand-sit/1046_E_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1049",
+        "test_recording_id": "6.Lay-stand/1049_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1049_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1049",
+        "test_recording_id": "4.Stand-sit/1049_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1049_E_1.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1049",
+        "test_recording_id": "11.Walk/1049_L_1.csv",
+        "train_recording_id": "11.Walk/1049_L_3.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1052",
+        "test_recording_id": "6.Lay-stand/1052_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1052_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1052",
+        "test_recording_id": "4.Stand-sit/1052_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1052_E_3.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1052",
+        "test_recording_id": "11.Walk/1052_L_2.csv",
+        "train_recording_id": "11.Walk/1052_L_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1055",
+        "test_recording_id": "6.Lay-stand/1055_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1055_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1055",
+        "test_recording_id": "4.Stand-sit/1055_E_4.csv",
+        "train_recording_id": "4.Stand-sit/1055_E_1.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1055",
+        "test_recording_id": "10.Sit-up/1055_K_1.csv",
+        "train_recording_id": "10.Sit-up/1055_K_2.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1056",
+        "test_recording_id": "4.Stand-sit/1056_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1056_E_5.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1056",
+        "test_recording_id": "8.Jump/1056_I_1.csv",
+        "train_recording_id": "8.Jump/1056_I_2.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1056",
+        "test_recording_id": "10.Sit-up/1056_K_1.csv",
+        "train_recording_id": "10.Sit-up/1056_K_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1058",
+        "test_recording_id": "6.Lay-stand/1058_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1058_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1058",
+        "test_recording_id": "4.Stand-sit/1058_E_3_0.csv",
+        "train_recording_id": "4.Stand-sit/1058_E_3.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1058",
+        "test_recording_id": "8.Jump/1058_I_1.csv",
+        "train_recording_id": "8.Jump/1058_I_2.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1060",
+        "test_recording_id": "6.Lay-stand/1060_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1060_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1060",
+        "test_recording_id": "4.Stand-sit/1060_E_4.csv",
+        "train_recording_id": "4.Stand-sit/1060_E_3.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1060",
+        "test_recording_id": "8.Jump/1060_I_2.csv",
+        "train_recording_id": "8.Jump/1060_I_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1061",
+        "test_recording_id": "6.Lay-stand/1061_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1061_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1061",
+        "test_recording_id": "4.Stand-sit/1061_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1061_E_2.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1061",
+        "test_recording_id": "10.Sit-up/1061_K_2.csv",
+        "train_recording_id": "10.Sit-up/1061_K_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1063",
+        "test_recording_id": "3.Talk-stand/1063_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1063_D_1_0.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1063",
+        "test_recording_id": "0.Stand/1063_A_1_0.csv",
+        "train_recording_id": "0.Stand/1063_A_1.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1063",
+        "test_recording_id": "2.Talk-sit/1063_C_1_0.csv",
+        "train_recording_id": "2.Talk-sit/1063_C_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1068",
+        "test_recording_id": "4.Stand-sit/1068_E_2.csv",
+        "train_recording_id": "4.Stand-sit/1068_E_1.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1068",
+        "test_recording_id": "11.Walk/1068_L_3.csv",
+        "train_recording_id": "11.Walk/1068_L_4.csv"
+      },
+      {
+        "activity_id": 12,
+        "subject_id": "1068",
+        "test_recording_id": "12.Walk-backwards/1068_M_2.csv",
+        "train_recording_id": "12.Walk-backwards/1068_M_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1069",
+        "test_recording_id": "6.Lay-stand/1069_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1069_G_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1069",
+        "test_recording_id": "4.Stand-sit/1069_E_4.csv",
+        "train_recording_id": "4.Stand-sit/1069_E_2.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1069",
+        "test_recording_id": "10.Sit-up/1069_K_2.csv",
+        "train_recording_id": "10.Sit-up/1069_K_1.csv"
+      },
+      {
+        "activity_id": 4,
+        "subject_id": "1070",
+        "test_recording_id": "4.Stand-sit/1070_E_3.csv",
+        "train_recording_id": "4.Stand-sit/1070_E_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1070",
+        "test_recording_id": "6.Lay-stand/1070_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1070_G_1.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1070",
+        "test_recording_id": "10.Sit-up/1070_K_2.csv",
+        "train_recording_id": "10.Sit-up/1070_K_1.csv"
+      },
+      {
+        "activity_id": 3,
+        "subject_id": "1071",
+        "test_recording_id": "3.Talk-stand/1071_D_1.csv",
+        "train_recording_id": "3.Talk-stand/1071_D_6.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1071",
+        "test_recording_id": "0.Stand/1071_A_6.csv",
+        "train_recording_id": "0.Stand/1071_A_1.csv"
+      },
+      {
+        "activity_id": 5,
+        "subject_id": "1071",
+        "test_recording_id": "5.Lay/1071_F_6.csv",
+        "train_recording_id": "5.Lay/1071_F_1.csv"
+      },
+      {
+        "activity_id": 0,
+        "subject_id": "1074",
+        "test_recording_id": "0.Stand/1074_A_1.csv",
+        "train_recording_id": "0.Stand/1074_A_2.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1074",
+        "test_recording_id": "10.Sit-up/1074_K_1.csv",
+        "train_recording_id": "10.Sit-up/1074_K_2.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1074",
+        "test_recording_id": "8.Jump/1074_I_1.csv",
+        "train_recording_id": "8.Jump/1074_I_2.csv"
+      },
+      {
+        "activity_id": 2,
+        "subject_id": "1076",
+        "test_recording_id": "2.Talk-sit/1076_C_1.csv",
+        "train_recording_id": "2.Talk-sit/1076_C_1_0.csv"
+      },
+      {
+        "activity_id": 7,
+        "subject_id": "1076",
+        "test_recording_id": "7.Pick/1076_H_2.csv",
+        "train_recording_id": "7.Pick/1076_H_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1076",
+        "test_recording_id": "6.Lay-stand/1076_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1076_G_1.csv"
+      },
+      {
+        "activity_id": 6,
+        "subject_id": "1077",
+        "test_recording_id": "6.Lay-stand/1077_G_2.csv",
+        "train_recording_id": "6.Lay-stand/1077_G_1.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1077",
+        "test_recording_id": "10.Sit-up/1077_K_2.csv",
+        "train_recording_id": "10.Sit-up/1077_K_1.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1077",
+        "test_recording_id": "8.Jump/1077_I_1.csv",
+        "train_recording_id": "8.Jump/1077_I_2.csv"
+      },
+      {
+        "activity_id": 17,
+        "subject_id": "1081",
+        "test_recording_id": "17.Table-tennis/1081_U_2.csv",
+        "train_recording_id": "17.Table-tennis/1081_U_1.csv"
+      },
+      {
+        "activity_id": 12,
+        "subject_id": "1081",
+        "test_recording_id": "12.Walk-backwards/1081_M_2.csv",
+        "train_recording_id": "12.Walk-backwards/1081_M_1.csv"
+      },
+      {
+        "activity_id": 11,
+        "subject_id": "1081",
+        "test_recording_id": "11.Walk/1081_L_1.csv",
+        "train_recording_id": "11.Walk/1081_L_4.csv"
+      },
+      {
+        "activity_id": 17,
+        "subject_id": "1082",
+        "test_recording_id": "17.Table-tennis/1082_U_1.csv",
+        "train_recording_id": "17.Table-tennis/1082_U_2.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1082",
+        "test_recording_id": "10.Sit-up/1082_K_4.csv",
+        "train_recording_id": "10.Sit-up/1082_K_5.csv"
+      },
+      {
+        "activity_id": 9,
+        "subject_id": "1082",
+        "test_recording_id": "9.Push-up/1082_J_2.csv",
+        "train_recording_id": "9.Push-up/1082_J_6.csv"
+      },
+      {
+        "activity_id": 14,
+        "subject_id": "1101",
+        "test_recording_id": "14.Run/1101_O_10.csv",
+        "train_recording_id": "14.Run/1101_O_3.csv"
+      },
+      {
+        "activity_id": 10,
+        "subject_id": "1101",
+        "test_recording_id": "10.Sit-up/1101_K_16.csv",
+        "train_recording_id": "10.Sit-up/1101_K_17.csv"
+      },
+      {
+        "activity_id": 8,
+        "subject_id": "1101",
+        "test_recording_id": "8.Jump/1101_I_1.csv",
+        "train_recording_id": "8.Jump/1101_I_4.csv"
+      }
+    ],
+    "total_retained_windows": 19641
+  },
+  "artifacts": {
+    "class_summary": {
+      "filename": "kuhar_class_summary.csv",
+      "sha256": "e52fb8cd46c50e70ebd31c9c8a330c64c2c29616763ad63f2ef6bf948a016e9a",
+      "size_bytes": 2346
+    },
+    "minimum_support_class_summary": {
+      "filename": "kuhar_minimum_support_class_summary.csv",
+      "sha256": "22e0ee0e42f98ccca4ccc42262c37e7e4bf15d5a6f87cf4df7b5fdb2b0b4ecac",
+      "size_bytes": 2164
+    },
+    "recording_metadata": {
+      "filename": "kuhar_recording_metadata.csv",
+      "sha256": "4ae276289fe0d7f8f3720f13c60512941dc87d3f427ea0262180f64c7a0e1e6f",
+      "size_bytes": 565497
+    },
+    "recording_split_manifest": {
+      "filename": "kuhar_recording_split_manifest.csv",
+      "sha256": "d06d169fa514695c444e15b9e9663d71472e82704e12b6250bf4715a7cdd65e3",
+      "size_bytes": 298555
+    },
+    "subject_summary": {
+      "filename": "kuhar_subject_summary.csv",
+      "sha256": "95834d80c19431f294e7565e051edbee59c83fabec5540ef16fcaa5eb59e7e29",
+      "size_bytes": 5904
+    },
+    "window_split_manifest": {
+      "filename": "kuhar_window_split_manifest.csv.gz",
+      "sha256": "ee2c939254bee8635bcd6443417208d9d4ec9e3c9dcef932bcb28faec460499e",
+      "size_bytes": 85262
+    }
+  },
+  "audit_date": "2026-06-15",
+  "audit_version": "KU-HAR recording split audit V1",
+  "class_summary": [
+    {
+      "activity": "Stand",
+      "activity_id": 0,
+      "max_absolute_ratio_deviation": 0.05792349726775958,
+      "retained_recordings": 91,
+      "test_ratio": 0.17595628415300546,
+      "test_recordings": 16,
+      "test_windows": 322,
+      "total_windows": 1830,
+      "train_ratio": 0.6579234972677596,
+      "train_recordings": 60,
+      "train_windows": 1204,
+      "validation_ratio": 0.16612021857923498,
+      "validation_recordings": 15,
+      "validation_windows": 304
+    },
+    {
+      "activity": "Sit",
+      "activity_id": 1,
+      "max_absolute_ratio_deviation": 0.0516058791507894,
+      "retained_recordings": 91,
+      "test_ratio": 0.17746325530756668,
+      "test_recordings": 16,
+      "test_windows": 326,
+      "total_windows": 1837,
+      "train_ratio": 0.6516058791507894,
+      "train_recordings": 59,
+      "train_windows": 1197,
+      "validation_ratio": 0.170930865541644,
+      "validation_recordings": 16,
+      "validation_windows": 314
+    },
+    {
+      "activity": "Talk-sit",
+      "activity_id": 2,
+      "max_absolute_ratio_deviation": 0.056664743219850044,
+      "retained_recordings": 85,
+      "test_ratio": 0.17541834968263129,
+      "test_recordings": 15,
+      "test_windows": 304,
+      "total_windows": 1733,
+      "train_ratio": 0.65666474321985,
+      "train_recordings": 56,
+      "train_windows": 1138,
+      "validation_ratio": 0.16791690709751875,
+      "validation_recordings": 14,
+      "validation_windows": 291
+    },
+    {
+      "activity": "Talk-stand",
+      "activity_id": 3,
+      "max_absolute_ratio_deviation": 0.050907091808686133,
+      "retained_recordings": 88,
+      "test_ratio": 0.17702034084661902,
+      "test_recordings": 16,
+      "test_windows": 322,
+      "total_windows": 1819,
+      "train_ratio": 0.6509070918086861,
+      "train_recordings": 57,
+      "train_windows": 1184,
+      "validation_ratio": 0.1720725673446949,
+      "validation_recordings": 15,
+      "validation_windows": 313
+    },
+    {
+      "activity": "Stand-sit",
+      "activity_id": 4,
+      "max_absolute_ratio_deviation": 0.0016840019811787954,
+      "retained_recordings": 339,
+      "test_ratio": 0.20009905894006935,
+      "test_recordings": 67,
+      "test_windows": 404,
+      "total_windows": 2019,
+      "train_ratio": 0.5983159980188212,
+      "train_recordings": 198,
+      "train_windows": 1208,
+      "validation_ratio": 0.20158494304110947,
+      "validation_recordings": 74,
+      "validation_windows": 407
+    },
+    {
+      "activity": "Lay",
+      "activity_id": 5,
+      "max_absolute_ratio_deviation": 0.056126482213438744,
+      "retained_recordings": 87,
+      "test_ratio": 0.17391304347826086,
+      "test_recordings": 16,
+      "test_windows": 308,
+      "total_windows": 1771,
+      "train_ratio": 0.6561264822134387,
+      "train_recordings": 56,
+      "train_windows": 1162,
+      "validation_ratio": 0.16996047430830039,
+      "validation_recordings": 15,
+      "validation_windows": 301
+    },
+    {
+      "activity": "Lay-stand",
+      "activity_id": 6,
+      "max_absolute_ratio_deviation": 0.01364985163204746,
+      "retained_recordings": 148,
+      "test_ratio": 0.21364985163204747,
+      "test_recordings": 34,
+      "test_windows": 360,
+      "total_windows": 1685,
+      "train_ratio": 0.5910979228486647,
+      "train_recordings": 82,
+      "train_windows": 996,
+      "validation_ratio": 0.19525222551928784,
+      "validation_recordings": 32,
+      "validation_windows": 329
+    },
+    {
+      "activity": "Pick",
+      "activity_id": 7,
+      "max_absolute_ratio_deviation": 0.04637002341920382,
+      "retained_recordings": 105,
+      "test_ratio": 0.1865729898516784,
+      "test_recordings": 21,
+      "test_windows": 239,
+      "total_windows": 1281,
+      "train_ratio": 0.6463700234192038,
+      "train_recordings": 65,
+      "train_windows": 828,
+      "validation_ratio": 0.16705698672911787,
+      "validation_recordings": 19,
+      "validation_windows": 214
+    },
+    {
+      "activity": "Jump",
+      "activity_id": 8,
+      "max_absolute_ratio_deviation": 0.004918032786885296,
+      "retained_recordings": 130,
+      "test_ratio": 0.2,
+      "test_recordings": 26,
+      "test_windows": 122,
+      "total_windows": 610,
+      "train_ratio": 0.6049180327868853,
+      "train_recordings": 77,
+      "train_windows": 369,
+      "validation_ratio": 0.19508196721311474,
+      "validation_recordings": 27,
+      "validation_windows": 119
+    },
+    {
+      "activity": "Push-up",
+      "activity_id": 9,
+      "max_absolute_ratio_deviation": 0.0023529411764705854,
+      "retained_recordings": 111,
+      "test_ratio": 0.2,
+      "test_recordings": 23,
+      "test_windows": 85,
+      "total_windows": 425,
+      "train_ratio": 0.5976470588235294,
+      "train_recordings": 65,
+      "train_windows": 254,
+      "validation_ratio": 0.2023529411764706,
+      "validation_recordings": 23,
+      "validation_windows": 86
+    },
+    {
+      "activity": "Sit-up",
+      "activity_id": 10,
+      "max_absolute_ratio_deviation": 0.0059322033898305815,
+      "retained_recordings": 121,
+      "test_ratio": 0.19597457627118645,
+      "test_recordings": 26,
+      "test_windows": 185,
+      "total_windows": 944,
+      "train_ratio": 0.6059322033898306,
+      "train_recordings": 69,
+      "train_windows": 572,
+      "validation_ratio": 0.19809322033898305,
+      "validation_recordings": 26,
+      "validation_windows": 187
+    },
+    {
+      "activity": "Walk",
+      "activity_id": 11,
+      "max_absolute_ratio_deviation": 0.0005089058524173629,
+      "retained_recordings": 187,
+      "test_ratio": 0.19974554707379136,
+      "test_recordings": 38,
+      "test_windows": 157,
+      "total_windows": 786,
+      "train_ratio": 0.6005089058524173,
+      "train_recordings": 109,
+      "train_windows": 472,
+      "validation_ratio": 0.19974554707379136,
+      "validation_recordings": 40,
+      "validation_windows": 157
+    },
+    {
+      "activity": "Walk-backwards",
+      "activity_id": 12,
+      "max_absolute_ratio_deviation": 0.01245674740484426,
+      "retained_recordings": 50,
+      "test_ratio": 0.19377162629757785,
+      "test_recordings": 10,
+      "test_windows": 56,
+      "total_windows": 289,
+      "train_ratio": 0.6124567474048442,
+      "train_recordings": 30,
+      "train_windows": 177,
+      "validation_ratio": 0.19377162629757785,
+      "validation_recordings": 10,
+      "validation_windows": 56
+    },
+    {
+      "activity": "Walk-circle",
+      "activity_id": 13,
+      "max_absolute_ratio_deviation": 0.021848739495798353,
+      "retained_recordings": 35,
+      "test_ratio": 0.18907563025210083,
+      "test_recordings": 7,
+      "test_windows": 45,
+      "total_windows": 238,
+      "train_ratio": 0.6218487394957983,
+      "train_recordings": 21,
+      "train_windows": 148,
+      "validation_ratio": 0.18907563025210083,
+      "validation_recordings": 7,
+      "validation_windows": 45
+    },
+    {
+      "activity": "Run",
+      "activity_id": 14,
+      "max_absolute_ratio_deviation": 0.022680412371134023,
+      "retained_recordings": 144,
+      "test_ratio": 0.20824742268041238,
+      "test_recordings": 31,
+      "test_windows": 101,
+      "total_windows": 485,
+      "train_ratio": 0.6144329896907217,
+      "train_recordings": 81,
+      "train_windows": 298,
+      "validation_ratio": 0.177319587628866,
+      "validation_recordings": 32,
+      "validation_windows": 86
+    },
+    {
+      "activity": "Stair-up",
+      "activity_id": 15,
+      "max_absolute_ratio_deviation": 0.006949806949806958,
+      "retained_recordings": 53,
+      "test_ratio": 0.19305019305019305,
+      "test_recordings": 11,
+      "test_windows": 150,
+      "total_windows": 777,
+      "train_ratio": 0.6048906048906049,
+      "train_recordings": 31,
+      "train_windows": 470,
+      "validation_ratio": 0.20205920205920205,
+      "validation_recordings": 11,
+      "validation_windows": 157
+    },
+    {
+      "activity": "Stair-down",
+      "activity_id": 16,
+      "max_absolute_ratio_deviation": 0.008753315649867366,
+      "retained_recordings": 57,
+      "test_ratio": 0.19363395225464192,
+      "test_recordings": 12,
+      "test_windows": 146,
+      "total_windows": 754,
+      "train_ratio": 0.6087533156498673,
+      "train_recordings": 33,
+      "train_windows": 459,
+      "validation_ratio": 0.1976127320954907,
+      "validation_recordings": 12,
+      "validation_windows": 149
+    },
+    {
+      "activity": "Table-tennis",
+      "activity_id": 17,
+      "max_absolute_ratio_deviation": 0.024022346368715086,
+      "retained_recordings": 16,
+      "test_ratio": 0.22346368715083798,
+      "test_recordings": 4,
+      "test_windows": 80,
+      "total_windows": 358,
+      "train_ratio": 0.6005586592178771,
+      "train_recordings": 9,
+      "train_windows": 215,
+      "validation_ratio": 0.17597765363128492,
+      "validation_recordings": 3,
+      "validation_windows": 63
+    }
+  ],
+  "cohort_definition": {
+    "clients_excluded_without_usable_recordings": 1,
+    "full_sparse_evaluable_client": "at least three split-feasible activities",
+    "full_sparse_evaluable_clients": 54,
+    "full_sparse_non_evaluable_clients": 34,
+    "minimum_support_client": "full-sparse evaluable, at least eight observed activities, and at least five minutes of retained accelerometer data",
+    "minimum_support_clients": 50,
+    "minimum_support_excluded_label_ids": [
+      17
+    ],
+    "minimum_support_excluded_labels": [
+      "Table-tennis"
+    ],
+    "minimum_support_label_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "minimum_support_subject_ids": [
+      "1002",
+      "1003",
+      "1004",
+      "1006",
+      "1008",
+      "1013",
+      "1014",
+      "1015",
+      "1016",
+      "1017",
+      "1018",
+      "1019",
+      "1020",
+      "1021",
+      "1022",
+      "1023",
+      "1024",
+      "1025",
+      "1026",
+      "1027",
+      "1028",
+      "1029",
+      "1030",
+      "1031",
+      "1034",
+      "1036",
+      "1037",
+      "1038",
+      "1039",
+      "1040",
+      "1041",
+      "1042",
+      "1043",
+      "1044",
+      "1045",
+      "1046",
+      "1049",
+      "1052",
+      "1055",
+      "1056",
+      "1058",
+      "1060",
+      "1061",
+      "1063",
+      "1068",
+      "1069",
+      "1070",
+      "1071",
+      "1076",
+      "1077"
+    ],
+    "primary_usable_clients": 88,
+    "raw_subject_ids": 89,
+    "split_feasible_activity": "at least two independent retained recordings, each with at least three complete 3-second windows",
+    "subject_ids_excluded_without_usable_recordings": [
+      "1089"
+    ],
+    "supported_recording_threshold_windows": 3
+  },
+  "evaluation_support": {
+    "locally_unseen_supported_client_class_pairs": 35,
+    "minimum_support_locally_unseen_supported_client_class_pairs": 35,
+    "minimum_support_seen_supported_client_class_pairs": 229,
+    "minimum_support_supported_client_class_pairs": 264,
+    "realized_evaluable_clients": 54,
+    "realized_minimum_support_clients": 50,
+    "seen_supported_client_class_pairs": 244,
+    "supported_client_class_pairs": 279,
+    "supported_test_class_threshold_windows": 3
+  },
+  "implementation": {
+    "deterministic_gzip_mtime": 0,
+    "deterministic_tiebreak": "SHA-256 of seed and stable identifiers",
+    "window_manifest_rows": 19641
+  },
+  "integrity_checks": {
+    "all_classes_present_in_all_splits": true,
+    "all_excluded_recordings_marked_excluded": true,
+    "all_frozen_evaluable_clients_realized": true,
+    "all_minimum_cohort_classes_present_in_all_splits": true,
+    "all_minimum_support_clients_realized": true,
+    "all_retained_recordings_assigned_once": true,
+    "cross_subject_exact_duplicates_excluded": true,
+    "every_usable_client_has_train_data": true,
+    "window_manifest_matches_retained_window_count": true
+  },
+  "minimum_support_class_summary": [
+    {
+      "activity": "Stand",
+      "activity_id": 0,
+      "max_absolute_ratio_deviation": 0.01259600614439324,
+      "retained_recordings": 65,
+      "test_ratio": 0.20046082949308755,
+      "test_recordings": 13,
+      "test_windows": 261,
+      "total_windows": 1302,
+      "train_ratio": 0.6121351766513057,
+      "train_recordings": 40,
+      "train_windows": 797,
+      "validation_ratio": 0.18740399385560677,
+      "validation_recordings": 12,
+      "validation_windows": 244
+    },
+    {
+      "activity": "Sit",
+      "activity_id": 1,
+      "max_absolute_ratio_deviation": 0.006378132118451035,
+      "retained_recordings": 65,
+      "test_ratio": 0.20273348519362186,
+      "test_recordings": 13,
+      "test_windows": 267,
+      "total_windows": 1317,
+      "train_ratio": 0.6036446469248291,
+      "train_recordings": 39,
+      "train_windows": 795,
+      "validation_ratio": 0.19362186788154898,
+      "validation_recordings": 13,
+      "validation_windows": 255
+    },
+    {
+      "activity": "Talk-sit",
+      "activity_id": 2,
+      "max_absolute_ratio_deviation": 0.00512422360248449,
+      "retained_recordings": 63,
+      "test_ratio": 0.20341614906832298,
+      "test_recordings": 13,
+      "test_windows": 262,
+      "total_windows": 1288,
+      "train_ratio": 0.6017080745341615,
+      "train_recordings": 38,
+      "train_windows": 775,
+      "validation_ratio": 0.19487577639751552,
+      "validation_recordings": 12,
+      "validation_windows": 251
+    },
+    {
+      "activity": "Talk-stand",
+      "activity_id": 3,
+      "max_absolute_ratio_deviation": 0.008955223880596996,
+      "retained_recordings": 65,
+      "test_ratio": 0.19328358208955224,
+      "test_recordings": 13,
+      "test_windows": 259,
+      "total_windows": 1340,
+      "train_ratio": 0.608955223880597,
+      "train_recordings": 39,
+      "train_windows": 816,
+      "validation_ratio": 0.19776119402985073,
+      "validation_recordings": 13,
+      "validation_windows": 265
+    },
+    {
+      "activity": "Stand-sit",
+      "activity_id": 4,
+      "max_absolute_ratio_deviation": 0.007458912768647297,
+      "retained_recordings": 267,
+      "test_ratio": 0.19848293299620734,
+      "test_recordings": 52,
+      "test_windows": 314,
+      "total_windows": 1582,
+      "train_ratio": 0.6074589127686473,
+      "train_recordings": 158,
+      "train_windows": 961,
+      "validation_ratio": 0.19405815423514539,
+      "validation_recordings": 57,
+      "validation_windows": 307
+    },
+    {
+      "activity": "Lay",
+      "activity_id": 5,
+      "max_absolute_ratio_deviation": 0.007751937984496138,
+      "retained_recordings": 64,
+      "test_ratio": 0.19224806201550387,
+      "test_recordings": 13,
+      "test_windows": 248,
+      "total_windows": 1290,
+      "train_ratio": 0.6069767441860465,
+      "train_recordings": 38,
+      "train_windows": 783,
+      "validation_ratio": 0.2007751937984496,
+      "validation_recordings": 13,
+      "validation_windows": 259
+    },
+    {
+      "activity": "Lay-stand",
+      "activity_id": 6,
+      "max_absolute_ratio_deviation": 0.06490566037735845,
+      "retained_recordings": 117,
+      "test_ratio": 0.26490566037735847,
+      "test_recordings": 33,
+      "test_windows": 351,
+      "total_windows": 1325,
+      "train_ratio": 0.5811320754716981,
+      "train_recordings": 64,
+      "train_windows": 770,
+      "validation_ratio": 0.15396226415094338,
+      "validation_recordings": 20,
+      "validation_windows": 204
+    },
+    {
+      "activity": "Pick",
+      "activity_id": 7,
+      "max_absolute_ratio_deviation": 0.026955702167766216,
+      "retained_recordings": 88,
+      "test_ratio": 0.22525918944392084,
+      "test_recordings": 21,
+      "test_windows": 239,
+      "total_windows": 1061,
+      "train_ratio": 0.5730442978322338,
+      "train_recordings": 48,
+      "train_windows": 608,
+      "validation_ratio": 0.20169651272384542,
+      "validation_recordings": 19,
+      "validation_windows": 214
+    },
+    {
+      "activity": "Jump",
+      "activity_id": 8,
+      "max_absolute_ratio_deviation": 0.014027149321266918,
+      "retained_recordings": 105,
+      "test_ratio": 0.21040723981900453,
+      "test_recordings": 22,
+      "test_windows": 93,
+      "total_windows": 442,
+      "train_ratio": 0.5859728506787331,
+      "train_recordings": 60,
+      "train_windows": 259,
+      "validation_ratio": 0.20361990950226244,
+      "validation_recordings": 23,
+      "validation_windows": 90
+    },
+    {
+      "activity": "Push-up",
+      "activity_id": 9,
+      "max_absolute_ratio_deviation": 0.006521739130434773,
+      "retained_recordings": 69,
+      "test_ratio": 0.1956521739130435,
+      "test_recordings": 15,
+      "test_windows": 36,
+      "total_windows": 184,
+      "train_ratio": 0.5978260869565217,
+      "train_recordings": 39,
+      "train_windows": 110,
+      "validation_ratio": 0.20652173913043478,
+      "validation_recordings": 15,
+      "validation_windows": 38
+    },
+    {
+      "activity": "Sit-up",
+      "activity_id": 10,
+      "max_absolute_ratio_deviation": 0.01046277665995976,
+      "retained_recordings": 94,
+      "test_ratio": 0.20321931589537223,
+      "test_recordings": 21,
+      "test_windows": 101,
+      "total_windows": 497,
+      "train_ratio": 0.5895372233400402,
+      "train_recordings": 52,
+      "train_windows": 293,
+      "validation_ratio": 0.20724346076458752,
+      "validation_recordings": 21,
+      "validation_windows": 103
+    },
+    {
+      "activity": "Walk",
+      "activity_id": 11,
+      "max_absolute_ratio_deviation": 0.0025974025974025983,
+      "retained_recordings": 153,
+      "test_ratio": 0.20202020202020202,
+      "test_recordings": 31,
+      "test_windows": 140,
+      "total_windows": 693,
+      "train_ratio": 0.5974025974025974,
+      "train_recordings": 89,
+      "train_windows": 414,
+      "validation_ratio": 0.20057720057720058,
+      "validation_recordings": 33,
+      "validation_windows": 139
+    },
+    {
+      "activity": "Walk-backwards",
+      "activity_id": 12,
+      "max_absolute_ratio_deviation": 0.01874999999999999,
+      "retained_recordings": 42,
+      "test_ratio": 0.18359375,
+      "test_recordings": 8,
+      "test_windows": 47,
+      "total_windows": 256,
+      "train_ratio": 0.59765625,
+      "train_recordings": 24,
+      "train_windows": 153,
+      "validation_ratio": 0.21875,
+      "validation_recordings": 10,
+      "validation_windows": 56
+    },
+    {
+      "activity": "Walk-circle",
+      "activity_id": 13,
+      "max_absolute_ratio_deviation": 0.024999999999999994,
+      "retained_recordings": 29,
+      "test_ratio": 0.195,
+      "test_recordings": 6,
+      "test_windows": 39,
+      "total_windows": 200,
+      "train_ratio": 0.58,
+      "train_recordings": 16,
+      "train_windows": 116,
+      "validation_ratio": 0.225,
+      "validation_recordings": 7,
+      "validation_windows": 45
+    },
+    {
+      "activity": "Run",
+      "activity_id": 14,
+      "max_absolute_ratio_deviation": 0.0163265306122449,
+      "retained_recordings": 125,
+      "test_ratio": 0.19591836734693877,
+      "test_recordings": 27,
+      "test_windows": 48,
+      "total_windows": 245,
+      "train_ratio": 0.5877551020408164,
+      "train_recordings": 71,
+      "train_windows": 144,
+      "validation_ratio": 0.2163265306122449,
+      "validation_recordings": 27,
+      "validation_windows": 53
+    },
+    {
+      "activity": "Stair-up",
+      "activity_id": 15,
+      "max_absolute_ratio_deviation": 0.04536741214057505,
+      "retained_recordings": 21,
+      "test_ratio": 0.16613418530351437,
+      "test_recordings": 4,
+      "test_windows": 52,
+      "total_windows": 313,
+      "train_ratio": 0.645367412140575,
+      "train_recordings": 13,
+      "train_windows": 202,
+      "validation_ratio": 0.18849840255591055,
+      "validation_recordings": 4,
+      "validation_windows": 59
+    },
+    {
+      "activity": "Stair-down",
+      "activity_id": 16,
+      "max_absolute_ratio_deviation": 0.028767123287671253,
+      "retained_recordings": 21,
+      "test_ratio": 0.2089041095890411,
+      "test_recordings": 5,
+      "test_windows": 61,
+      "total_windows": 292,
+      "train_ratio": 0.6198630136986302,
+      "train_recordings": 12,
+      "train_windows": 181,
+      "validation_ratio": 0.17123287671232876,
+      "validation_recordings": 4,
+      "validation_windows": 50
+    }
+  ],
+  "primary_protocol": {
+    "modality": "three-axis accelerometer",
+    "sample_rate_hz": 100,
+    "seed": 20260615,
+    "split_unit": "complete recording file",
+    "target_split_ratios": {
+      "test": 0.2,
+      "train": 0.6,
+      "validation": 0.2
+    },
+    "timestamp_policy": "use post-interpolation row order/sample index; timestamps are audited but not used as window boundaries",
+    "window_overlap": 0.0,
+    "window_samples": 300,
+    "window_seconds": 3,
+    "windowing_order": "split before windowing"
+  },
+  "quality_policy": {
+    "cross_subject_exact_duplicate": "exclude every ambiguous copy to prevent user-level leakage",
+    "missing_accelerometer": "exclude from primary protocol",
+    "missing_gyroscope": "retain for accelerometer primary protocol; exclude from supplementary six-channel protocol",
+    "same_subject_exact_duplicate": "retain lexicographically first recording and exclude copies",
+    "sensor_length_mismatch": "not fatal for accelerometer primary protocol; truncate to common valid length in supplementary six-channel protocol"
+  },
+  "raw_data_summary": {
+    "activities": 18,
+    "excluded_primary_recordings": 7,
+    "exclusions_by_reason": {
+      "ambiguous_cross_subject_exact_duplicate": 4,
+      "exact_duplicate_same_subject_copy": 2,
+      "missing_accelerometer": 1
+    },
+    "observed_distinct_subject_ids": 89,
+    "official_participants": 90,
+    "recording_files": 1945,
+    "recordings_with_accel_duplicate_time": 0,
+    "recordings_with_accel_internal_padding": 0,
+    "recordings_with_accel_nonmonotonic_time": 0,
+    "recordings_with_gyro_duplicate_time": 1,
+    "recordings_with_gyro_internal_padding": 0,
+    "recordings_with_gyro_nonmonotonic_time": 0,
+    "recordings_with_missing_accelerometer": 1,
+    "recordings_with_missing_gyroscope": 1,
+    "recordings_with_sensor_length_mismatch": 752,
+    "retained_accel_duration_hours": 17.159930555555555,
+    "retained_primary_recordings": 1938,
+    "total_absolute_sensor_length_mismatch_samples": 12316,
+    "total_accel_samples": 6219535,
+    "total_gyro_samples": 6211827
+  },
+  "source": {
+    "archive_filename": "2.Trimmed_interpolated_data.zip",
+    "archive_sha256": "9fe5d0052f2f1d6711afac42ee4badd968116afa8ba4b8ba591f4fdd771c2ec2",
+    "archive_size_bytes": 161492605,
+    "dataset": "KU-HAR",
+    "doi": "10.17632/45f952y38r.5",
+    "duplicate_groups": [
+      {
+        "duplicate_group_id": "duplicate_01",
+        "members": [
+          "14.Run/1101_O_2.csv",
+          "14.Run/1101_O_4.csv"
+        ]
+      },
+      {
+        "duplicate_group_id": "duplicate_02",
+        "members": [
+          "14.Run/1101_O_3.csv",
+          "14.Run/1101_O_5.csv"
+        ]
+      },
+      {
+        "duplicate_group_id": "duplicate_03",
+        "members": [
+          "17.Table-tennis/1083_U_2.csv",
+          "17.Table-tennis/1089_U_2.csv"
+        ]
+      },
+      {
+        "duplicate_group_id": "duplicate_04",
+        "members": [
+          "17.Table-tennis/1089_U_1.csv",
+          "17.Table-tennis/1090_U_1.csv"
+        ]
+      }
+    ],
+    "license": "CC BY 4.0",
+    "malformed_column_counts": {},
+    "malformed_rows": 0,
+    "nonfinite_rows": 0,
+    "recording_files": 1945,
+    "url": "https://data.mendeley.com/datasets/45f952y38r/5",
+    "version": 5,
+    "zip_crc_check_passed": true
+  }
+}
