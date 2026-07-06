@@ -12,5 +12,7 @@ The intended progression is:
 3. `fedprox`: FedProx extension of the tuned 1D-CNN FedAvg baseline.
 4. `scaffold`: SCAFFOLD client-drift correction with server/client control
    variates.
-5. Later folders for FedRep, Ditto, FedBN, FedProto, and
+5. `fedbn`: FedBN with client-local BatchNorm state and shared non-BN
+   aggregation.
+6. Later folders for FedRep, Ditto, FedProto, and
    compression variants.
