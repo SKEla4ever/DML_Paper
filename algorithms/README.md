@@ -14,5 +14,7 @@ The intended progression is:
    variates.
 5. `fedbn`: FedBN with client-local BatchNorm state and shared non-BN
    aggregation.
-6. Later folders for FedRep, Ditto, FedProto, and
+6. `fedrep`: FedRep with a shared representation and client-local classifier
+   heads.
+7. Later folders for Ditto, FedProto, and
    compression variants.
