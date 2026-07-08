@@ -16,5 +16,7 @@ The intended progression is:
    aggregation.
 6. `fedrep`: FedRep with a shared representation and client-local classifier
    heads.
-7. Later folders for Ditto, FedProto, and
+7. `ditto`: Ditto with global FedAvg training plus full client-local
+   personalized models regularized toward the global model.
+8. Later folders for FedProto and
    compression variants.
