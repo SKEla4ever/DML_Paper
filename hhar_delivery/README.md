@@ -35,9 +35,9 @@ python3 hhar_delivery/scripts/run_hhar_diagnostic_v1.py
 ```
 
 The diagnostic uses a reduced, explicitly labeled setup-check budget. The
-split-seed sensitivity is complete. Final FedAvg selection must aggregate
-validation metrics over the three frozen splits, followed by a separate
-model-seed pass; test metrics remain selection-blind.
+split-seed sensitivity and validation-only FedAvg tuning are complete. A
+separate model-seed pass remains; test metrics stay locked until that pass is
+complete.
 
 ## Split-Seed Sensitivity
 
@@ -50,5 +50,28 @@ model/optimizer seed at `20260615`. This pass is complete; its split identities
 must be reused for HHAR hyperparameter selection.
 
 Results: `hhar_delivery/reports/hhar/hhar_split_seed_sensitivity_v1.md`
+
+## FedAvg Validation-Only Tuning
+
+```bash
+.venv/bin/python hhar_delivery/scripts/run_hhar_fedavg_3split_tuning_v1.py
+.venv/bin/python hhar_delivery/scripts/run_hhar_fedavg_50round_refinement_v1.py
+.venv/bin/python hhar_delivery/scripts/run_hhar_fedavg_lr_schedule_v1.py
+```
+
+All tuning runs evaluate only `train` and `validation`; the scripts reject any
+run containing a test performance metric. The frozen references are:
+
+- Primary high-budget: BatchNorm, SGD momentum `0.9`, constant learning rate
+  `0.01`, 1 local epoch, 50 rounds, full participation.
+- Communication-efficient supplementary: BatchNorm, SGD momentum `0.9`,
+  constant learning rate `0.03`, 1 local epoch, 20 rounds, full participation.
+
+The two references have different communication budgets and must not be
+compared as if they were equal-budget runs. Hyperparameters are frozen; a
+separate model-seed sensitivity pass is required before locked test evaluation.
+
+Final selection report:
+`hhar_delivery/reports/hhar/hhar_fedavg_lr_schedule_v1.md`
 
 Raw archives and generated training caches remain local and are not committed.

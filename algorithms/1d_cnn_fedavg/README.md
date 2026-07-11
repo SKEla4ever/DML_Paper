@@ -1,6 +1,6 @@
 # 1D CNN FedAvg
 
-First neural FedAvg baseline for KU-HAR frozen V1.
+Neural 1D-CNN FedAvg baseline for the frozen KU-HAR and HHAR protocols.
 
 The model consumes raw 3-axis accelerometer windows with shape:
 
@@ -38,13 +38,23 @@ manifest. HHAR windows have shape `channels=3, samples=150`; clients are
 physical-user/device pairs.
 
 ```bash
-python3 algorithms/1d_cnn_fedavg/train_hhar_1d_cnn_fedavg.py \
-  --rounds 20 \
+.venv/bin/python algorithms/1d_cnn_fedavg/train_hhar_1d_cnn_fedavg.py \
+  --manifest-dir \
+    outputs/hhar_split_seed_sensitivity_v1/split_seed20260615/manifest \
+  --rounds 50 \
   --local-epochs 1 \
-  --optimizer adam \
-  --lr 0.001 \
+  --optimizer sgd \
+  --momentum 0.9 \
+  --lr 0.01 \
+  --norm batchnorm \
+  --evaluation-splits train validation \
   --output-dir outputs/hhar_1d_cnn_fedavg_v1
 ```
+
+The frozen primary HHAR setting was selected using aggregate validation
+Macro-F1 over split seeds `20260615`, `20260616`, and `20260617`. Its report is
+`hhar_delivery/reports/hhar/hhar_fedavg_lr_schedule_v1.md`. Test evaluation was
+not run during tuning.
 
 ## Example
 

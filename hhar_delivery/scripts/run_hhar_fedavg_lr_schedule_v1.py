@@ -444,6 +444,10 @@ def write_report(
         "round and communication budget. All tuning histories contain only `train` "
         "and `validation` performance metrics.",
         "",
+        "The hyperparameters and budgets are now frozen, but the reported validation "
+        "uncertainty holds model seed `20260615` fixed. Run model-seed sensitivity "
+        "separately before the first locked test evaluation.",
+        "",
     ]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines))
@@ -500,6 +504,9 @@ def main() -> None:
     base.write_csv(args.output_root / "selected_trajectory.csv", trajectory)
     base.write_csv(args.output_root / "validation_device_summary.csv", devices)
     summary = {
+        "selection_status": (
+            "hyperparameters_frozen_pending_model_seed_sensitivity"
+        ),
         "pre_registration": registered,
         "test_access_audit": {
             "evaluation_splits": list(base.EVALUATION_SPLITS),
