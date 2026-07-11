@@ -1,0 +1,74 @@
+{
+  "candidate_rule": "top 3 configurations by V1 20-round validation mean",
+  "candidates": [
+    {
+      "config_id": "batchnorm_sgd_lr0p03",
+      "lr": 0.03,
+      "momentum": 0.9,
+      "norm": "batchnorm",
+      "optimizer": "sgd"
+    },
+    {
+      "config_id": "batchnorm_sgd_lr0p01",
+      "lr": 0.01,
+      "momentum": 0.9,
+      "norm": "batchnorm",
+      "optimizer": "sgd"
+    },
+    {
+      "config_id": "batchnorm_adam_lr0p0003",
+      "lr": 0.0003,
+      "momentum": 0.0,
+      "norm": "batchnorm",
+      "optimizer": "adam"
+    }
+  ],
+  "experiment": "hhar_fedavg_50round_refinement_v1",
+  "fixed_model_seed": 20260615,
+  "fixed_protocol": {
+    "batch_size": 64,
+    "client_fraction": 1.0,
+    "eval_every": 5,
+    "local_epochs": 1,
+    "normalization": "batchnorm for all top-3 V1 candidates",
+    "rounds": 50,
+    "weight_decay": 0.0
+  },
+  "refinement_trigger": {
+    "all_three_splits_declined": true,
+    "per_split_round_50_minus_round_20": {
+      "20260615": -0.16496870106658074,
+      "20260616": -0.10994104983913422,
+      "20260617": -0.17093468677079526
+    },
+    "round_20_validation_mean_macro_f1": 0.5395973078094892,
+    "round_50_minus_round_20_mean_macro_f1": -0.14861481255883674,
+    "round_50_validation_mean_macro_f1": 0.3909824952506525,
+    "selected_20_round_config": "batchnorm_sgd_lr0p03"
+  },
+  "reporting_rule": "Always report the selected 20-round communication-efficient candidate and selected 50-round high-budget candidate separately. Do not compare their absolute scores as if communication budgets were equal.",
+  "selection_boundary": {
+    "evaluation_splits": [
+      "train",
+      "validation"
+    ],
+    "pair_level_metrics_used_for_selection": false,
+    "test_metrics_generated": false
+  },
+  "selection_rule": "At exactly 50 rounds, find the maximum 3-split mean validation Macro-F1. Treat candidates within 0.005 as a practical tie, then choose lower sample SD, higher worst-split Macro-F1, and finally earlier V1 pilot rank.",
+  "source_v1_result_commit": "86bfe4234c9fbafa7359f6e32d7a334b88b3ed9c",
+  "source_v1_summary": "hhar_delivery/reports/hhar/hhar_fedavg_3split_tuning_v1_summary.json",
+  "source_v1_summary_sha256": "11d6868767e3cd80e47211bec4f390e7b0fbf577a61c87667c1d2f7fa0e5fb97",
+  "split_seeds": [
+    20260615,
+    20260616,
+    20260617
+  ],
+  "training_runtime": {
+    "mps_available": true,
+    "numpy_version": "2.5.0",
+    "python_version": "3.12.5",
+    "torch_version": "2.12.1",
+    "training_python": ".venv/bin/python"
+  }
+}
