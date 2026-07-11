@@ -531,6 +531,7 @@ def evaluate_all_splits(
     device,
     batch_size: int,
     num_classes: int,
+    evaluation_splits: tuple[str, ...] = SPLITS,
 ) -> dict[str, object]:
     return {
         split: evaluate_split(
@@ -545,7 +546,7 @@ def evaluate_all_splits(
             batch_size=batch_size,
             num_classes=num_classes,
         )
-        for split in SPLITS
+        for split in evaluation_splits
     }
 
 
@@ -558,7 +559,7 @@ def flatten_round_metrics(record: dict[str, object]) -> dict[str, object]:
         "downlink_bytes": record["communication"]["downlink_bytes"],
     }
     metrics = record["metrics"]
-    for split in SPLITS:
+    for split in metrics:
         split_metrics = metrics[split]
         flat[f"{split}_loss"] = split_metrics["loss"]
         flat[f"{split}_accuracy"] = split_metrics["accuracy"]
@@ -603,7 +604,8 @@ def train_fedavg(
 
     x_tensor = torch.from_numpy(windows)
     y_tensor = torch.from_numpy(y)
-    num_classes = int(y.max()) + 1
+    train_labels = y[split_indices["train"]]
+    num_classes = int(train_labels.max()) + 1
     global_model = build_model(num_classes, args).to(device)
     parameter_bytes = state_payload_bytes(global_model)
     parameter_count = int(sum(p.numel() for p in global_model.parameters()))
@@ -634,6 +636,11 @@ def train_fedavg(
         "total_bytes": 0,
     }
     history: list[dict[str, object]] = []
+    evaluation_splits = tuple(getattr(args, "evaluation_splits", SPLITS))
+    if not evaluation_splits or not set(evaluation_splits).issubset(SPLITS):
+        raise ValueError(
+            f"evaluation_splits must be a non-empty subset of {SPLITS}"
+        )
 
     def record_metrics(round_index: int, selected_clients: int) -> None:
         metrics = evaluate_all_splits(
@@ -647,6 +654,7 @@ def train_fedavg(
             device=device,
             batch_size=args.batch_size,
             num_classes=num_classes,
+            evaluation_splits=evaluation_splits,
         )
         history.append(
             {

@@ -1,0 +1,155 @@
+{
+  "experiment": "hhar_fedavg_3split_tuning_v1",
+  "fixed_model_seed": 20260615,
+  "fixed_training_protocol": {
+    "batch_size": 64,
+    "client_fraction": 1.0,
+    "clients": "physical-user/device pairs",
+    "endpoint_rounds": 50,
+    "eval_every": 5,
+    "groupnorm_groups": 8,
+    "modality": "phone accelerometer",
+    "model": "1D CNN",
+    "pilot_rounds": 20,
+    "weight_decay": 0.0
+  },
+  "selection_boundary": {
+    "evaluation_splits": [
+      "train",
+      "validation"
+    ],
+    "pair_level_metrics_used_for_selection": false,
+    "selection_metric": "mean validation global Macro-F1 over 3 splits",
+    "test_metrics_generated_during_tuning": false
+  },
+  "source_split_summary": "hhar_delivery/reports/hhar/hhar_split_seed_sensitivity_v1_summary.json",
+  "source_split_summary_sha256": "6f484464a0ddab104076994e948b49187b7c7d7d55665ef5e65953c9e8196414",
+  "split_identity": [
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260615,
+      "split_windows": {
+        "test": 6309,
+        "train": 20364,
+        "validation": 6367
+      },
+      "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+    },
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260616,
+      "split_windows": {
+        "test": 6309,
+        "train": 20418,
+        "validation": 6313
+      },
+      "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+    },
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260617,
+      "split_windows": {
+        "test": 6294,
+        "train": 20382,
+        "validation": 6364
+      },
+      "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+    }
+  ],
+  "split_seeds": [
+    20260615,
+    20260616,
+    20260617
+  ],
+  "stage_1_pilot": {
+    "grid": [
+      {
+        "config_id": "batchnorm_adam_lr0p001",
+        "lr": 0.001,
+        "momentum": 0.0,
+        "norm": "batchnorm",
+        "optimizer": "adam"
+      },
+      {
+        "config_id": "batchnorm_adam_lr0p0003",
+        "lr": 0.0003,
+        "momentum": 0.0,
+        "norm": "batchnorm",
+        "optimizer": "adam"
+      },
+      {
+        "config_id": "groupnorm_adam_lr0p001",
+        "lr": 0.001,
+        "momentum": 0.0,
+        "norm": "groupnorm",
+        "optimizer": "adam"
+      },
+      {
+        "config_id": "groupnorm_adam_lr0p0003",
+        "lr": 0.0003,
+        "momentum": 0.0,
+        "norm": "groupnorm",
+        "optimizer": "adam"
+      },
+      {
+        "config_id": "batchnorm_sgd_lr0p03",
+        "lr": 0.03,
+        "momentum": 0.9,
+        "norm": "batchnorm",
+        "optimizer": "sgd"
+      },
+      {
+        "config_id": "batchnorm_sgd_lr0p01",
+        "lr": 0.01,
+        "momentum": 0.9,
+        "norm": "batchnorm",
+        "optimizer": "sgd"
+      },
+      {
+        "config_id": "groupnorm_sgd_lr0p03",
+        "lr": 0.03,
+        "momentum": 0.9,
+        "norm": "groupnorm",
+        "optimizer": "sgd"
+      },
+      {
+        "config_id": "groupnorm_sgd_lr0p01",
+        "lr": 0.01,
+        "momentum": 0.9,
+        "norm": "groupnorm",
+        "optimizer": "sgd"
+      }
+    ],
+    "local_epochs": 1,
+    "selection_rule": "Find the maximum 3-split mean validation Macro-F1. Treat configs within 0.005 as a practical tie, then choose lower sample SD, higher worst-split Macro-F1, and finally earlier frozen grid order."
+  },
+  "stage_2_local_epochs": {
+    "applied_to": "stage_1 selected norm/optimizer/lr",
+    "candidates": [
+      1,
+      2
+    ],
+    "selection_rule": "Use 2 local epochs only if its 3-split mean validation Macro-F1 improves by more than 0.005 and its worst split is not lower by more than 0.01; otherwise retain 1 local epoch."
+  },
+  "stage_3_endpoint": {
+    "reproduction_check": "The independently rerun round-20 validation checkpoints must match the selected stage-1/stage-2 checkpoints within 1e-6.",
+    "rounds": 50,
+    "selection": "fixed endpoint, not selected from test or trajectory"
+  },
+  "training_runtime": {
+    "mps_available": true,
+    "numpy_version": "2.5.0",
+    "python_version": "3.12.5",
+    "torch_version": "2.12.1",
+    "training_python": ".venv/bin/python"
+  }
+}

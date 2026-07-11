@@ -79,6 +79,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--groupnorm-groups", type=int, default=8)
     parser.add_argument("--eval-every", type=int, default=1)
+    parser.add_argument(
+        "--evaluation-splits",
+        choices=SPLITS,
+        nargs="+",
+        default=list(SPLITS),
+        help="Dataset splits for metric evaluation; training always uses train only.",
+    )
     parser.add_argument("--seed", type=int, default=20260615)
     parser.add_argument(
         "--device", choices=("auto", "cpu", "cuda", "mps"), default="auto"
@@ -256,12 +263,13 @@ def group_metric_rows(
     devices: np.ndarray,
     split_indices: dict[str, np.ndarray],
     args: argparse.Namespace,
+    evaluation_splits: tuple[str, ...],
 ) -> list[dict[str, object]]:
     device = base.choose_device(args.device)
     x_tensor = base.torch.from_numpy(windows)
     y_tensor = base.torch.from_numpy(labels)
     rows = []
-    for split in SPLITS:
+    for split in evaluation_splits:
         indices = split_indices[split]
         predictions, _loss = base.predict_split(
             model, x_tensor, y_tensor, indices, device, args.batch_size
@@ -324,6 +332,8 @@ def main() -> None:
         return
 
     base.require_torch()
+    evaluation_splits = tuple(dict.fromkeys(args.evaluation_splits))
+    resolved_device = base.choose_device(args.device)
     labels, clients, users, devices, split_indices = build_label_arrays(rows)
     windows = load_or_build_windows(
         rows=rows,
@@ -352,10 +362,15 @@ def main() -> None:
         "norm": args.norm,
         "groupnorm_groups": args.groupnorm_groups,
         "eval_every": args.eval_every,
+        "evaluation_splits": list(evaluation_splits),
         "seed": args.seed,
         "device": args.device,
+        "requested_device": args.device,
+        "resolved_device": str(resolved_device),
         "labels": list(ACTIVITIES),
         "input_shape": [3, WINDOW_SAMPLES],
+        "python_version": sys.version.split()[0],
+        "python_executable": sys.executable,
         "torch_version": base.torch.__version__,
         "primary_interpretation": "global and per-device; not independent-user fairness",
     }
@@ -386,6 +401,7 @@ def main() -> None:
             devices=devices,
             split_indices=split_indices,
             args=args,
+            evaluation_splits=evaluation_splits,
         ),
     )
     final = base.flatten_round_metrics(history[-1])
