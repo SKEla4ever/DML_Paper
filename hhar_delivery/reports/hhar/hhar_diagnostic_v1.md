@@ -54,7 +54,7 @@ HHAR retains explicit device feature shift after train-only global channel stand
 
 Pair-level metrics are descriptive because 69 retained user-device clients come from only nine physical users. Global Macro-F1 and per-device behavior are the primary HHAR outcomes; this dataset is not used for independent-user fairness claims.
 
-Validation is systematically harder than test across the centralized, real-client FedAvg, and IID-client controls. This is consistent with high execution-group variance in a nine-user dataset. Before selecting hyperparameters, run a pre-registered split-seed sensitivity pass and report aggregate behavior rather than relying on this single split alone.
+Validation is systematically harder than test across the centralized, real-client FedAvg, and IID-client controls. This is consistent with high execution-group variance in a nine-user dataset. The subsequent pre-registered three-seed pass confirmed stable real/IID FedAvg controls, a robust IID-over-real ranking, and non-negligible centralized validation variance; see `hhar_delivery/reports/hhar/hhar_split_seed_sensitivity_v1.md`. This original setup check predates per-experiment RNG isolation, so the split-sensitivity report is authoritative for multi-split estimates. All HHAR hyperparameter selection must aggregate validation behavior over the three frozen splits rather than rely on this single run.
 
 ## Artifacts
 

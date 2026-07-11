@@ -77,6 +77,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--fedavg-local-epochs", type=int, default=1)
     parser.add_argument("--fedavg-eval-every", type=int, default=5)
     parser.add_argument("--iid-clients", type=int, default=69)
+    parser.add_argument(
+        "--experiment-seed-isolation",
+        action="store_true",
+        help="Reset model RNG before each diagnostic experiment.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--rebuild-cache", action="store_true")
@@ -85,6 +90,15 @@ def parse_args() -> argparse.Namespace:
 
 def log(message: str) -> None:
     print(f"[hhar_diagnostic_v1] {message}", flush=True)
+
+
+def reset_experiment_seed(args: argparse.Namespace, device: object) -> None:
+    if not args.experiment_seed_isolation:
+        return
+    base.torch.manual_seed(args.seed)
+    np.random.seed(args.seed)
+    if device.type == "cuda":
+        base.torch.cuda.manual_seed_all(args.seed)
 
 
 def write_json(path: Path, value: object) -> None:
@@ -478,6 +492,7 @@ def main() -> None:
     histories: dict[str, Any] = {}
 
     log("running tiny-overfit positive control")
+    reset_experiment_seed(args, device)
     tiny_indices = diagnostic.select_tiny_indices(
         labels,
         split_indices["train"],
@@ -516,6 +531,7 @@ def main() -> None:
     }
 
     log("running centralized oracle")
+    reset_experiment_seed(args, device)
     central_model, histories["centralized_oracle"] = diagnostic.train_centralized(
         "centralized_oracle",
         x_tensor,
@@ -559,6 +575,7 @@ def main() -> None:
     )
 
     log("running random-label negative control")
+    reset_experiment_seed(args, device)
     randomized_labels = diagnostic.make_randomized_train_labels(
         labels, split_indices["train"], args.seed
     )
@@ -599,6 +616,7 @@ def main() -> None:
     confusion["random_label_centralized"] = matrices
 
     log("running real user-device FedAvg")
+    reset_experiment_seed(args, device)
     real_history, real_model = diagnostic.run_fedavg_diagnostic(
         "real_client_fedavg",
         windows,
@@ -646,6 +664,7 @@ def main() -> None:
     )
 
     log("running equal-client-count IID FedAvg")
+    reset_experiment_seed(args, device)
     iid_clients = diagnostic.make_iid_train_subjects(
         clients,
         labels,
@@ -745,6 +764,7 @@ def main() -> None:
         "fedavg_rounds": args.fedavg_rounds,
         "fedavg_local_epochs": args.fedavg_local_epochs,
         "iid_clients": args.iid_clients,
+        "experiment_seed_isolation": args.experiment_seed_isolation,
         "resolved_device": str(device),
         "input_shape": [3, hhar.WINDOW_SAMPLES],
         "interpretation": "setup diagnostic, not tuned baseline",

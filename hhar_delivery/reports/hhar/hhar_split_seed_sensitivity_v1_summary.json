@@ -1,0 +1,504 @@
+{
+  "algorithm_margins": [
+    {
+      "iid_minus_real_test_macro_f1": 0.20248447729295693,
+      "iid_minus_real_validation_macro_f1": 0.12623953109800495,
+      "split_seed": 20260615
+    },
+    {
+      "iid_minus_real_test_macro_f1": 0.19054311853141026,
+      "iid_minus_real_validation_macro_f1": 0.14251812161064475,
+      "split_seed": 20260616
+    },
+    {
+      "iid_minus_real_test_macro_f1": 0.1889913415016662,
+      "iid_minus_real_validation_macro_f1": 0.14117140738475736,
+      "split_seed": 20260617
+    }
+  ],
+  "control_results": [
+    {
+      "random_label_validation_macro_f1": 0.07242197422823553,
+      "split_seed": 20260615,
+      "tiny_overfit_macro_f1": 1.0
+    },
+    {
+      "random_label_validation_macro_f1": 0.1088417561316226,
+      "split_seed": 20260616,
+      "tiny_overfit_macro_f1": 1.0
+    },
+    {
+      "random_label_validation_macro_f1": 0.16999436120351363,
+      "split_seed": 20260617,
+      "tiny_overfit_macro_f1": 1.0
+    }
+  ],
+  "device_summary": [
+    {
+      "device_id": "nexus4_1",
+      "max_macro_f1": 0.5556955035124717,
+      "mean_macro_f1": 0.5423449283528202,
+      "min_macro_f1": 0.5296383826192866,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.026057120893185015,
+      "sample_std_macro_f1": 0.013040493385481779,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "nexus4_2",
+      "max_macro_f1": 0.5536603815925955,
+      "mean_macro_f1": 0.5367619985512503,
+      "min_macro_f1": 0.5170356442893052,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.0366247373032903,
+      "sample_std_macro_f1": 0.018475413704492842,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3_1",
+      "max_macro_f1": 0.5364758492204866,
+      "mean_macro_f1": 0.5286140918320208,
+      "min_macro_f1": 0.5217475454784176,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.014728303742069015,
+      "sample_std_macro_f1": 0.007414416128906939,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3_2",
+      "max_macro_f1": 0.67717690769888,
+      "mean_macro_f1": 0.664291426383692,
+      "min_macro_f1": 0.6487863956516972,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.028390512047182792,
+      "sample_std_macro_f1": 0.01437538948813657,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3mini_1",
+      "max_macro_f1": 0.6380537476107654,
+      "mean_macro_f1": 0.620655291105784,
+      "min_macro_f1": 0.6006183560241962,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.03743539158656917,
+      "sample_std_macro_f1": 0.01885665168340741,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3mini_2",
+      "max_macro_f1": 0.4047619047619047,
+      "mean_macro_f1": 0.3466579460022083,
+      "min_macro_f1": 0.27477477477477474,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.12998712998712997,
+      "sample_std_macro_f1": 0.0660799781533411,
+      "split": "test",
+      "stable_under_preregistered_thresholds": false
+    },
+    {
+      "device_id": "samsungold_1",
+      "max_macro_f1": 0.5371180799322751,
+      "mean_macro_f1": 0.5295019413962962,
+      "min_macro_f1": 0.5171888809536461,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.019929198978628992,
+      "sample_std_macro_f1": 0.010762855082666193,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "samsungold_2",
+      "max_macro_f1": 0.6041728398657767,
+      "mean_macro_f1": 0.5925307936710593,
+      "min_macro_f1": 0.5749965289345427,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.029176310931234073,
+      "sample_std_macro_f1": 0.015454868469102375,
+      "split": "test",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "nexus4_1",
+      "max_macro_f1": 0.40247573380019946,
+      "mean_macro_f1": 0.3874549680871949,
+      "min_macro_f1": 0.3719400047754082,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.03053572902479129,
+      "sample_std_macro_f1": 0.015273861994232233,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "nexus4_2",
+      "max_macro_f1": 0.4329846127271854,
+      "mean_macro_f1": 0.4307477735463597,
+      "min_macro_f1": 0.42796214364511487,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.005022469082070546,
+      "sample_std_macro_f1": 0.002555812465968929,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3_1",
+      "max_macro_f1": 0.30837845895880495,
+      "mean_macro_f1": 0.30292243212917447,
+      "min_macro_f1": 0.29747454563384856,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.010903913324956382,
+      "sample_std_macro_f1": 0.00545196122036119,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3_2",
+      "max_macro_f1": 0.34931766539644965,
+      "mean_macro_f1": 0.3455353158896108,
+      "min_macro_f1": 0.3404072372309393,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.008910428165510353,
+      "sample_std_macro_f1": 0.004605124616744832,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3mini_1",
+      "max_macro_f1": 0.38043714738991047,
+      "mean_macro_f1": 0.3651837265936184,
+      "min_macro_f1": 0.3425266457037032,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.03791050168620724,
+      "sample_std_macro_f1": 0.020010301637192054,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "s3mini_2",
+      "max_macro_f1": 0.41110853355426674,
+      "mean_macro_f1": 0.3871470864767875,
+      "min_macro_f1": 0.36079365079365083,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.05031488276061591,
+      "sample_std_macro_f1": 0.025242584335222636,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "samsungold_1",
+      "max_macro_f1": 0.4802488444488538,
+      "mean_macro_f1": 0.47485569763809404,
+      "min_macro_f1": 0.4682021074258216,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.012046737023032217,
+      "sample_std_macro_f1": 0.006121479102458535,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    },
+    {
+      "device_id": "samsungold_2",
+      "max_macro_f1": 0.32096401903892,
+      "mean_macro_f1": 0.3163947751104653,
+      "min_macro_f1": 0.30933318879278743,
+      "n_split_seeds": 3,
+      "range_macro_f1": 0.011630830246132595,
+      "sample_std_macro_f1": 0.006203054166491466,
+      "split": "validation",
+      "stable_under_preregistered_thresholds": true
+    }
+  ],
+  "equal_fedavg_communication_bytes": 133782720,
+  "pre_registration": {
+    "experiment": "hhar_split_seed_sensitivity_v1",
+    "fixed_model_seed": 20260615,
+    "isolation_rule": "Only execution split seed changes; model/optimizer seed, architecture, hyperparameters, client count, and communication budget remain fixed; model RNG is reset before each diagnostic experiment.",
+    "protocols": [
+      "centralized_oracle",
+      "real_client_fedavg",
+      "iid_client_fedavg"
+    ],
+    "selection_boundary": "Test metrics characterize split difficulty only and must not be used to select algorithm hyperparameters.",
+    "split_seeds": [
+      20260615,
+      20260616,
+      20260617
+    ],
+    "stability_thresholds": {
+      "maximum_macro_f1_range": 0.1,
+      "maximum_sample_std_macro_f1": 0.05
+    },
+    "training_budget": {
+      "batch_size": 64,
+      "centralized_epochs": 15,
+      "fedavg_local_epochs": 1,
+      "fedavg_rounds": 10,
+      "iid_clients": 69,
+      "learning_rate": 0.001,
+      "normalization": "batchnorm",
+      "optimizer": "adam",
+      "random_label_epochs": 5,
+      "tiny_overfit_epochs": 150
+    }
+  },
+  "protocol_summary": [
+    {
+      "max_abs_test_validation_gap": 0.3479520680970065,
+      "mean_test_minus_validation_macro_f1": 0.3021430634727127,
+      "n_split_seeds": 3,
+      "protocol": "centralized_oracle",
+      "protocol_label": "centralized",
+      "stable_under_preregistered_thresholds": false,
+      "test_max_macro_f1": 0.8857805880219031,
+      "test_mean_macro_f1": 0.8704593693769559,
+      "test_min_macro_f1": 0.8418912817978278,
+      "test_range_macro_f1": 0.043889306224075275,
+      "test_sample_std_macro_f1": 0.024762420169021998,
+      "validation_max_macro_f1": 0.6350653734234617,
+      "validation_mean_macro_f1": 0.5683163059042432,
+      "validation_min_macro_f1": 0.5320550243643712,
+      "validation_range_macro_f1": 0.10301034905909046,
+      "validation_sample_std_macro_f1": 0.05787842278224889
+    },
+    {
+      "max_abs_test_validation_gap": 0.20816432938497603,
+      "mean_test_minus_validation_macro_f1": 0.18616761661788014,
+      "n_split_seeds": 3,
+      "protocol": "real_client_fedavg",
+      "protocol_label": "user-device FedAvg",
+      "stable_under_preregistered_thresholds": true,
+      "test_max_macro_f1": 0.5865213654503787,
+      "test_mean_macro_f1": 0.5740715608509172,
+      "test_min_macro_f1": 0.5584409807568854,
+      "test_range_macro_f1": 0.028080384693493277,
+      "test_sample_std_macro_f1": 0.014307864994253551,
+      "validation_max_macro_f1": 0.3938860484129621,
+      "validation_mean_macro_f1": 0.387903944233037,
+      "validation_min_macro_f1": 0.37835703606540266,
+      "validation_range_macro_f1": 0.015529012347559434,
+      "validation_sample_std_macro_f1": 0.008355742140932407
+    },
+    {
+      "max_abs_test_validation_gap": 0.25598426350188486,
+      "mean_test_minus_validation_macro_f1": 0.2435309090287556,
+      "n_split_seeds": 3,
+      "protocol": "iid_client_fedavg",
+      "protocol_label": "IID-client FedAvg",
+      "stable_under_preregistered_thresholds": true,
+      "test_max_macro_f1": 0.7755127069520449,
+      "test_mean_macro_f1": 0.7680778732929282,
+      "test_min_macro_f1": 0.7609254580498424,
+      "test_range_macro_f1": 0.014587248902202532,
+      "test_sample_std_macro_f1": 0.007297724149006129,
+      "validation_max_macro_f1": 0.5339868698313909,
+      "validation_mean_macro_f1": 0.5245469642641727,
+      "validation_min_macro_f1": 0.51952844345016,
+      "validation_range_macro_f1": 0.014458426381230849,
+      "validation_sample_std_macro_f1": 0.00818064824493006
+    }
+  ],
+  "run_metadata": [
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260615,
+      "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+    },
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260616,
+      "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+    },
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260617,
+      "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+    }
+  ],
+  "split_overlap": [
+    {
+      "same_split_executions": 105,
+      "same_split_fraction": 0.8076923076923077,
+      "split_seed_a": 20260615,
+      "split_seed_b": 20260616,
+      "test_jaccard": 0.5384615384615384,
+      "total_executions": 130,
+      "validation_jaccard": 0.5526315789473685
+    },
+    {
+      "same_split_executions": 105,
+      "same_split_fraction": 0.8076923076923077,
+      "split_seed_a": 20260615,
+      "split_seed_b": 20260617,
+      "test_jaccard": 0.5641025641025641,
+      "total_executions": 130,
+      "validation_jaccard": 0.5675675675675675
+    },
+    {
+      "same_split_executions": 105,
+      "same_split_fraction": 0.8076923076923077,
+      "split_seed_a": 20260616,
+      "split_seed_b": 20260617,
+      "test_jaccard": 0.6052631578947368,
+      "total_executions": 130,
+      "validation_jaccard": 0.5945945945945946
+    }
+  ],
+  "split_results": [
+    {
+      "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+      "fixed_model_seed": 20260615,
+      "protocol": "centralized_oracle",
+      "protocol_label": "centralized",
+      "split_seed": 20260615,
+      "test_macro_f1": 0.8857805880219031,
+      "test_minus_validation_macro_f1": 0.3479520680970065,
+      "test_windows": 6309,
+      "total_communication_bytes": 0,
+      "train_macro_f1": 0.9935456495732375,
+      "train_windows": 20364,
+      "validation_macro_f1": 0.5378285199248966,
+      "validation_windows": 6367,
+      "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+    },
+    {
+      "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+      "fixed_model_seed": 20260615,
+      "protocol": "real_client_fedavg",
+      "protocol_label": "user-device FedAvg",
+      "split_seed": 20260615,
+      "test_macro_f1": 0.5584409807568854,
+      "test_minus_validation_macro_f1": 0.16455493234392332,
+      "test_windows": 6309,
+      "total_communication_bytes": 133782720,
+      "train_macro_f1": 0.6220253215608446,
+      "train_windows": 20364,
+      "validation_macro_f1": 0.3938860484129621,
+      "validation_windows": 6367,
+      "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+    },
+    {
+      "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+      "fixed_model_seed": 20260615,
+      "protocol": "iid_client_fedavg",
+      "protocol_label": "IID-client FedAvg",
+      "split_seed": 20260615,
+      "test_macro_f1": 0.7609254580498424,
+      "test_minus_validation_macro_f1": 0.2407998785388753,
+      "test_windows": 6309,
+      "total_communication_bytes": 133782720,
+      "train_macro_f1": 0.8895794366288005,
+      "train_windows": 20364,
+      "validation_macro_f1": 0.520125579510967,
+      "validation_windows": 6367,
+      "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+    },
+    {
+      "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+      "fixed_model_seed": 20260615,
+      "protocol": "centralized_oracle",
+      "protocol_label": "centralized",
+      "split_seed": 20260616,
+      "test_macro_f1": 0.8837062383111367,
+      "test_minus_validation_macro_f1": 0.248640864887675,
+      "test_windows": 6309,
+      "total_communication_bytes": 0,
+      "train_macro_f1": 0.9924853073034842,
+      "train_windows": 20418,
+      "validation_macro_f1": 0.6350653734234617,
+      "validation_windows": 6313,
+      "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+    },
+    {
+      "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+      "fixed_model_seed": 20260615,
+      "protocol": "real_client_fedavg",
+      "protocol_label": "user-device FedAvg",
+      "split_seed": 20260616,
+      "test_macro_f1": 0.5772523363454872,
+      "test_minus_validation_macro_f1": 0.1857835881247411,
+      "test_windows": 6309,
+      "total_communication_bytes": 133782720,
+      "train_macro_f1": 0.6132618814651134,
+      "train_windows": 20418,
+      "validation_macro_f1": 0.3914687482207461,
+      "validation_windows": 6313,
+      "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+    },
+    {
+      "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+      "fixed_model_seed": 20260615,
+      "protocol": "iid_client_fedavg",
+      "protocol_label": "IID-client FedAvg",
+      "split_seed": 20260616,
+      "test_macro_f1": 0.7677954548768975,
+      "test_minus_validation_macro_f1": 0.2338085850455066,
+      "test_windows": 6309,
+      "total_communication_bytes": 133782720,
+      "train_macro_f1": 0.8865810736372062,
+      "train_windows": 20418,
+      "validation_macro_f1": 0.5339868698313909,
+      "validation_windows": 6313,
+      "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+    },
+    {
+      "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+      "fixed_model_seed": 20260615,
+      "protocol": "centralized_oracle",
+      "protocol_label": "centralized",
+      "split_seed": 20260617,
+      "test_macro_f1": 0.8418912817978278,
+      "test_minus_validation_macro_f1": 0.30983625743345655,
+      "test_windows": 6294,
+      "total_communication_bytes": 0,
+      "train_macro_f1": 0.9910501569302678,
+      "train_windows": 20382,
+      "validation_macro_f1": 0.5320550243643712,
+      "validation_windows": 6364,
+      "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+    },
+    {
+      "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+      "fixed_model_seed": 20260615,
+      "protocol": "real_client_fedavg",
+      "protocol_label": "user-device FedAvg",
+      "split_seed": 20260617,
+      "test_macro_f1": 0.5865213654503787,
+      "test_minus_validation_macro_f1": 0.20816432938497603,
+      "test_windows": 6294,
+      "total_communication_bytes": 133782720,
+      "train_macro_f1": 0.6131601254518286,
+      "train_windows": 20382,
+      "validation_macro_f1": 0.37835703606540266,
+      "validation_windows": 6364,
+      "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+    },
+    {
+      "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+      "fixed_model_seed": 20260615,
+      "protocol": "iid_client_fedavg",
+      "protocol_label": "IID-client FedAvg",
+      "split_seed": 20260617,
+      "test_macro_f1": 0.7755127069520449,
+      "test_minus_validation_macro_f1": 0.25598426350188486,
+      "test_windows": 6294,
+      "total_communication_bytes": 133782720,
+      "train_macro_f1": 0.8916146833636377,
+      "train_windows": 20382,
+      "validation_macro_f1": 0.51952844345016,
+      "validation_windows": 6364,
+      "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+    }
+  ]
+}
