@@ -71,6 +71,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--local-epochs", type=int, default=1)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--lr", type=float, default=0.001)
+    parser.add_argument(
+        "--lr-schedule",
+        choices=("constant", "step", "cosine"),
+        default="constant",
+    )
+    parser.add_argument("--lr-step-rounds", type=int, nargs="*", default=[])
+    parser.add_argument("--lr-step-gamma", type=float, default=0.1)
+    parser.add_argument("--lr-min", type=float, default=0.0)
     parser.add_argument("--momentum", type=float, default=0.0)
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument("--optimizer", choices=("sgd", "adam"), default="adam")
@@ -356,6 +364,10 @@ def main() -> None:
         "local_epochs": args.local_epochs,
         "batch_size": args.batch_size,
         "lr": args.lr,
+        "lr_schedule": args.lr_schedule,
+        "lr_step_rounds": args.lr_step_rounds,
+        "lr_step_gamma": args.lr_step_gamma,
+        "lr_min": args.lr_min,
         "momentum": args.momentum,
         "weight_decay": args.weight_decay,
         "optimizer": args.optimizer,

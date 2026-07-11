@@ -310,7 +310,7 @@ def expected_run_config(
     rounds: int,
     split_seed: int,
 ) -> dict[str, object]:
-    return {
+    expected = {
         "dataset": "HHAR",
         "manifest_version": "V1",
         "manifest_dir": str(manifest_dir(args, split_seed)),
@@ -332,6 +332,10 @@ def expected_run_config(
         "python_version": args.training_runtime["python_version"],
         "torch_version": args.training_runtime["torch_version"],
     }
+    for key in ("lr_schedule", "lr_step_rounds", "lr_step_gamma", "lr_min"):
+        if key in config:
+            expected[key] = config[key]
+    return expected
 
 
 def validate_run(
@@ -474,6 +478,15 @@ def run_one(
         "--seed",
         str(MODEL_SEED),
     ]
+    if "lr_schedule" in config:
+        command.extend(["--lr-schedule", str(config["lr_schedule"])])
+        command.extend(
+            ["--lr-step-gamma", str(config.get("lr_step_gamma", 0.1))]
+        )
+        command.extend(["--lr-min", str(config.get("lr_min", 0.0))])
+        step_rounds = [str(value) for value in config.get("lr_step_rounds", [])]
+        if step_rounds:
+            command.extend(["--lr-step-rounds", *step_rounds])
     print(f"[{ordinal}] running {output_dir}", flush=True)
     with (output_dir / "run.log").open("w") as handle:
         completed = subprocess.run(

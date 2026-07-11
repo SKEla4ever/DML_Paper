@@ -347,14 +347,37 @@ def state_payload_bytes(model) -> int:
     )
 
 
-def make_optimizer(model, args: argparse.Namespace):
+def learning_rate_for_round(args: argparse.Namespace, round_index: int) -> float:
+    schedule = getattr(args, "lr_schedule", "constant")
+    if schedule == "constant" or round_index <= 0:
+        return float(args.lr)
+    if schedule == "step":
+        step_rounds = tuple(getattr(args, "lr_step_rounds", ()))
+        if not step_rounds:
+            raise ValueError("step LR schedule requires at least one step round")
+        gamma = float(getattr(args, "lr_step_gamma", 0.1))
+        decays = sum(round_index > step_round for step_round in step_rounds)
+        return float(args.lr) * gamma**decays
+    if schedule == "cosine":
+        minimum = float(getattr(args, "lr_min", 0.0))
+        denominator = max(int(args.rounds) - 1, 1)
+        progress = min(max((round_index - 1) / denominator, 0.0), 1.0)
+        cosine = 0.5 * (1.0 + math.cos(math.pi * progress))
+        return minimum + (float(args.lr) - minimum) * cosine
+    raise ValueError(f"unknown LR schedule: {schedule}")
+
+
+def make_optimizer(
+    model, args: argparse.Namespace, learning_rate: float | None = None
+):
+    lr = float(args.lr) if learning_rate is None else learning_rate
     if args.optimizer == "adam":
         return torch.optim.Adam(
-            model.parameters(), lr=args.lr, weight_decay=args.weight_decay
+            model.parameters(), lr=lr, weight_decay=args.weight_decay
         )
     return torch.optim.SGD(
         model.parameters(),
-        lr=args.lr,
+        lr=lr,
         momentum=args.momentum,
         weight_decay=args.weight_decay,
     )
@@ -374,7 +397,9 @@ def train_local_model(
     model = build_model(num_classes, args).to(device)
     model.load_state_dict(global_state)
     model.train()
-    optimizer = make_optimizer(model, args)
+    optimizer = make_optimizer(
+        model, args, learning_rate_for_round(args, round_index)
+    )
     criterion = nn.CrossEntropyLoss()
     rng = np.random.default_rng(stable_int(args.seed, round_index, client_id))
     for _epoch in range(args.local_epochs):
@@ -558,6 +583,8 @@ def flatten_round_metrics(record: dict[str, object]) -> dict[str, object]:
         "uplink_bytes": record["communication"]["uplink_bytes"],
         "downlink_bytes": record["communication"]["downlink_bytes"],
     }
+    if "learning_rate" in record:
+        flat["learning_rate"] = record["learning_rate"]
     metrics = record["metrics"]
     for split in metrics:
         split_metrics = metrics[split]
@@ -659,6 +686,7 @@ def train_fedavg(
         history.append(
             {
                 "round": round_index,
+                "learning_rate": learning_rate_for_round(args, round_index),
                 "selected_clients": selected_clients,
                 "communication": dict(communication),
                 "metrics": metrics,
