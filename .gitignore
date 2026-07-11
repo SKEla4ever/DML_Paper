@@ -9,6 +9,7 @@ __pycache__/
 
 # Raw datasets and generated experiment outputs
 kuhar_delivery/data/raw/
+hhar_delivery/data/raw/
 outputs/
 
 # Intermediate manifest-generation trials; keep the frozen delivery folder.

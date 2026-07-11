@@ -1,0 +1,7 @@
+activity_id,activity,total_windows,train_windows,train_executions,validation_windows,validation_executions,test_windows,test_executions
+0,bike,5471,3333,5,1066,2,1072,2
+1,sit,5947,4030,6,1250,2,667,1
+2,stand,5662,3858,6,642,1,1162,2
+3,walk,6277,3517,5,1396,2,1364,2
+4,stairsup,5041,2918,24,1032,11,1091,12
+5,stairsdown,4642,2708,25,981,11,953,11

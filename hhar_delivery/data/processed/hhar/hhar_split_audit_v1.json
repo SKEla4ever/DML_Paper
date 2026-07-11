@@ -1,0 +1,142 @@
+{
+  "allocation": {
+    "accepted_moves": 26,
+    "changes_by_pass": [
+      20,
+      6,
+      0
+    ],
+    "final_objective": 1.8452470142629778,
+    "group_unit": "synchronized physical-user activity execution",
+    "method": "deterministic grouped greedy allocation plus coordinate refinement",
+    "objective_weights": {
+      "class": 30.0,
+      "client": 1.0,
+      "device": 8.0,
+      "user": 8.0
+    },
+    "refinement_passes": 3,
+    "support_repairs": [],
+    "target_ratios": {
+      "test": 0.2,
+      "train": 0.6,
+      "validation": 0.2
+    }
+  },
+  "artifact_sha256": {
+    "hhar_class_summary.csv": "0143885f392417d08992b922f79b851de9ab28390c16c01214ff492a295fb520",
+    "hhar_client_summary.csv": "d7e60f41bdc4800588552e355c4872bf8af4cb8dcdcaea118474f131953e3ef6",
+    "hhar_device_summary.csv": "ed8e66b102e34081b2543f73a848423c87c1415b1e3d9c1d6fbcf106d5f29561",
+    "hhar_execution_split_manifest.csv": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+    "hhar_recording_metadata.csv": "e596be08bc4f4d02370f0d9e8a6a0c2b8408e5518e4a8f0bf0fd4142baaaf26b",
+    "hhar_window_split_manifest.csv.gz": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+  },
+  "dataset": "HHAR",
+  "dataset_doi": "10.24432/C5689X",
+  "dataset_license": "CC BY 4.0",
+  "dataset_url": "https://archive.ics.uci.edu/dataset/344/heterogeneity%2Bactivity%2Brecognition",
+  "execution_group_summary": {
+    "ambiguous_synchronization_raw_runs": 1,
+    "executions_with_repeated_device_runs": 0,
+    "maximum_devices_per_execution": 8,
+    "minimum_devices_per_execution": 6
+  },
+  "execution_groups": 130,
+  "manifest_version": "V1",
+  "protocol": {
+    "activity_label_order": [
+      "bike",
+      "sit",
+      "stand",
+      "walk",
+      "stairsup",
+      "stairsdown"
+    ],
+    "client_unit": "physical-user/device pair",
+    "execution_overlap_tolerance_ms": 0,
+    "maximum_interpolation_gap_ns": 1000000000,
+    "modality": "phone accelerometer",
+    "split_unit": "synchronized physical-user activity execution",
+    "synchronization_method": "majority device run-count canonical executions; ordinal matching for complete devices; overlap matching for incomplete devices",
+    "target_sample_rate_hz": 50,
+    "window_overlap": 0,
+    "window_samples": 150,
+    "window_seconds": 3.0
+  },
+  "realized": {
+    "class_support_all_splits": true,
+    "clients": 69,
+    "excluded_segments": 176,
+    "included_segments": 1865,
+    "primary_metric_clients": 14,
+    "split_ratios": {
+      "test": 0.1909503631961259,
+      "train": 0.6163438256658595,
+      "validation": 0.19270581113801452
+    },
+    "split_windows": {
+      "test": 6309,
+      "train": 20364,
+      "validation": 6367
+    },
+    "training_clients": 69,
+    "weak_devices": [
+      "s3mini_2"
+    ],
+    "windows": 33040
+  },
+  "scan": {
+    "continuous_segments": 2041,
+    "devices": [
+      "nexus4_1",
+      "nexus4_2",
+      "s3_1",
+      "s3_2",
+      "s3mini_1",
+      "s3mini_2",
+      "samsungold_1",
+      "samsungold_2"
+    ],
+    "duplicate_creation_timestamps": 0,
+    "malformed_rows": 0,
+    "models": [
+      "nexus4",
+      "s3",
+      "s3mini",
+      "samsungold"
+    ],
+    "non_null_label_runs": 968,
+    "nonfinite_rows": 0,
+    "physical_users": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i"
+    ],
+    "raw_label_rows": {
+      "bike": 1845557,
+      "null": 1783200,
+      "sit": 1991919,
+      "stairsdown": 1615896,
+      "stairsup": 1782010,
+      "stand": 1851492,
+      "walk": 2192401
+    },
+    "raw_rows": 13062475,
+    "raw_user_device_pairs": 71
+  },
+  "seed": 20260615,
+  "source": {
+    "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+    "archive_size_bytes": 777127275,
+    "phone_accelerometer_crc32": "e552f8f3",
+    "phone_accelerometer_member": "Activity recognition exp/Phones_accelerometer.csv",
+    "phone_accelerometer_uncompressed_bytes": 1291856387,
+    "zip_crc_check_passed": true
+  }
+}

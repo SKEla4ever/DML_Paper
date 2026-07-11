@@ -1,0 +1,9 @@
+device_id,model,physical_users,clients,raw_non_null_samples,median_segment_sample_rate_hz,total_windows,train_windows,validation_windows,test_windows,weak_device_condition
+nexus4_1,nexus4,9,9,2670808,198.5939548000159,4249,2651,801,797,False
+nexus4_2,nexus4,9,9,2734424,198.5939548000159,4388,2737,825,826,False
+s3_1,s3,8,8,1212820,98.87284951552304,4236,2609,817,810,False
+s3_2,s3,9,9,1348811,98.76787087184309,4710,2906,915,889,False
+s3mini_1,s3mini,9,9,1336251,99.9000999000999,4538,2819,871,848,False
+s3mini_2,s3mini,7,7,81909,73.61252657293338,359,202,76,81,True
+samsungold_1,samsungold,9,9,947918,50.258832989897975,5280,3220,1031,1029,False
+samsungold_2,samsungold,9,9,946334,50.33599278350127,5280,3220,1031,1029,False

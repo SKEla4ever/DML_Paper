@@ -30,6 +30,22 @@ learning-rate set. Selection should use validation metrics only.
 
 This method requires PyTorch.
 
+## HHAR V1
+
+The HHAR entry point reuses the same model, optimization, aggregation, and
+communication accounting while loading the frozen synchronized-execution HHAR
+manifest. HHAR windows have shape `channels=3, samples=150`; clients are
+physical-user/device pairs.
+
+```bash
+python3 algorithms/1d_cnn_fedavg/train_hhar_1d_cnn_fedavg.py \
+  --rounds 20 \
+  --local-epochs 1 \
+  --optimizer adam \
+  --lr 0.001 \
+  --output-dir outputs/hhar_1d_cnn_fedavg_v1
+```
+
 ## Example
 
 ```bash
