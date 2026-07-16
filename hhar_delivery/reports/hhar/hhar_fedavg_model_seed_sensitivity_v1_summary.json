@@ -1,0 +1,545 @@
+{
+  "confirmatory_summary": {
+    "confirmatory_max_model_seed_marginal_macro_f1": 0.49731463093576495,
+    "confirmatory_mean_of_model_seed_marginals_macro_f1": 0.44886017142873413,
+    "confirmatory_min_model_seed_marginal_macro_f1": 0.40040571192170327,
+    "confirmatory_minus_development_macro_f1": -0.02785677422746291,
+    "confirmatory_model_seed_marginal_sample_std_macro_f1": 0.06852495379230096,
+    "confirmatory_model_seeds": [
+      20260616,
+      20260617
+    ],
+    "development_marginal_mean_macro_f1": 0.47671694565619704,
+    "development_model_seed": 20260615,
+    "n_confirmatory_cells": 6
+  },
+  "frozen_primary_reference": {
+    "config_id": "batchnorm_sgd_lr0p01_constant",
+    "local_epochs": 1,
+    "lr": 0.01,
+    "lr_schedule": "constant",
+    "model": "1D CNN",
+    "momentum": 0.9,
+    "norm": "batchnorm",
+    "optimizer": "sgd",
+    "resolved_device": "mps",
+    "rounds": 50,
+    "total_communication_bytes": 668913600,
+    "weight_decay": 0.0
+  },
+  "model_seed_marginal_stability": {
+    "balanced_grand_mean_macro_f1": 0.45814576283788844,
+    "factor": "model_seed",
+    "marginal_max_macro_f1": 0.49731463093576495,
+    "marginal_min_macro_f1": 0.40040571192170327,
+    "marginal_range_macro_f1": 0.09690891901406168,
+    "marginal_sample_std_macro_f1": 0.05105390552711685,
+    "n_marginal_means": 3,
+    "range_pass": true,
+    "range_threshold": 0.1,
+    "sample_std_pass": false,
+    "sample_std_threshold": 0.05,
+    "stable": false
+  },
+  "model_seed_summary": [
+    {
+      "model_seed": 20260615,
+      "n_cells": 3,
+      "role": "development",
+      "validation_max_macro_f1": 0.4861667280948978,
+      "validation_mean_macro_f1": 0.47671694565619704,
+      "validation_min_macro_f1": 0.46720968363498283,
+      "validation_range_macro_f1": 0.018957044459914973,
+      "validation_sample_std_across_other_factor": 0.009478652941774095
+    },
+    {
+      "model_seed": 20260616,
+      "n_cells": 3,
+      "role": "confirmatory",
+      "validation_max_macro_f1": 0.40336865906020386,
+      "validation_mean_macro_f1": 0.40040571192170327,
+      "validation_min_macro_f1": 0.39613004953786196,
+      "validation_range_macro_f1": 0.007238609522341899,
+      "validation_sample_std_across_other_factor": 0.003793650345082849
+    },
+    {
+      "model_seed": 20260617,
+      "n_cells": 3,
+      "role": "confirmatory",
+      "validation_max_macro_f1": 0.5075449228303702,
+      "validation_mean_macro_f1": 0.49731463093576495,
+      "validation_min_macro_f1": 0.4862440838360322,
+      "validation_range_macro_f1": 0.021300838994338045,
+      "validation_sample_std_across_other_factor": 0.010675249742885919
+    }
+  ],
+  "next_step": "expand the frozen configuration to five model seeds before test",
+  "paired_model_seed_deltas": [
+    {
+      "max_paired_delta_macro_f1": -0.07107963409712087,
+      "mean_paired_delta_macro_f1": -0.07631123373449378,
+      "min_paired_delta_macro_f1": -0.08444830092785377,
+      "model_seed": 20260616,
+      "paired_deltas_by_split": [
+        -0.07340576617850669,
+        -0.08444830092785377,
+        -0.07107963409712087
+      ],
+      "reference_model_seed": 20260615,
+      "sample_std_paired_delta_macro_f1": 0.007142241909719573,
+      "split_seeds": [
+        20260615,
+        20260616,
+        20260617
+      ]
+    },
+    {
+      "max_paired_delta_macro_f1": 0.030770497591659673,
+      "mean_paired_delta_macro_f1": 0.020597685279567863,
+      "min_paired_delta_macro_f1": 0.011988158045994568,
+      "model_seed": 20260617,
+      "paired_deltas_by_split": [
+        0.030770497591659673,
+        0.011988158045994568,
+        0.01903440020104935
+      ],
+      "reference_model_seed": 20260615,
+      "sample_std_paired_delta_macro_f1": 0.009488254048016568,
+      "split_seeds": [
+        20260615,
+        20260616,
+        20260617
+      ]
+    }
+  ],
+  "pre_registration": {
+    "analysis_plan": {
+      "factor_decomposition": "Descriptive balanced two-way decomposition into split, model-seed, and split-by-model interaction sums of squares; no p-values.",
+      "model_seed_variability": "Sample SD and range across the three model-seed marginal means.",
+      "paired_check": "For each confirmatory model seed, subtract the development-seed score within each identical split before averaging.",
+      "primary_confirmatory_estimate": "Mean of the two confirmatory model-seed marginal validation Macro-F1 values, where each marginal first averages the three frozen split seeds.",
+      "prohibited_summary": "Do not use a naive pooled 9-cell standard deviation as either split or model-seed uncertainty.",
+      "split_variability": "Reported separately as sample SD and range across the three split-seed marginal means."
+    },
+    "crossed_design": {
+      "confirmatory_model_seeds": [
+        20260616,
+        20260617
+      ],
+      "development_model_seed": 20260615,
+      "model_seeds": [
+        20260615,
+        20260616,
+        20260617
+      ],
+      "new_confirmatory_cells": 6,
+      "reused_development_cells": 3,
+      "reused_development_runs": [
+        {
+          "final_metrics_sha256": "1d57f1df968b78e444b89741a93365ea4037fd96f7751a591b42a6d29ce95ac2",
+          "model_seed": 20260615,
+          "run_config_sha256": "748c28ab7e3930e384dbc86d07739f55baa4db985478603494893b97b5efbe6f",
+          "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260615",
+          "split_seed": 20260615
+        },
+        {
+          "final_metrics_sha256": "86bcb685041ca325ec687d55f18967cd561fd267fd59c5cd5b6f7f6349e83a1f",
+          "model_seed": 20260615,
+          "run_config_sha256": "3fbc1b17129729689443cc3c0d4d1d005420221aa442accac04345a6f1725c03",
+          "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260616",
+          "split_seed": 20260616
+        },
+        {
+          "final_metrics_sha256": "56ccbc5cecb82fe534c0b0929a5372b564b838ef32d0951c6a64b1a3ea13c0ad",
+          "model_seed": 20260615,
+          "run_config_sha256": "44017c0ee4959ee917d1d25cc37d79cd495112ddf06d165a48ee66c52fbf283f",
+          "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260617",
+          "split_seed": 20260617
+        }
+      ],
+      "split_seeds": [
+        20260615,
+        20260616,
+        20260617
+      ],
+      "total_cells": 9
+    },
+    "experiment": "hhar_fedavg_model_seed_sensitivity_v1",
+    "frozen_configuration": {
+      "batch_size": 64,
+      "client_fraction": 1.0,
+      "config_id": "batchnorm_sgd_lr0p01_constant",
+      "eval_every": 5,
+      "local_epochs": 1,
+      "lr": 0.01,
+      "lr_schedule": "constant",
+      "model": "1D CNN",
+      "momentum": 0.9,
+      "norm": "batchnorm",
+      "optimizer": "sgd",
+      "rounds": 50,
+      "weight_decay": 0.0
+    },
+    "selection_boundary": {
+      "evaluation_splits": [
+        "train",
+        "validation"
+      ],
+      "pair_level_metrics_used_for_decision": false,
+      "primary_metric": "validation global Macro-F1",
+      "selection_or_retuning_performed": false,
+      "test_metrics_generated": false
+    },
+    "source_selection_result_commit": "2fa0497c2b68983df69ed57a662589cfc20ef3ff",
+    "source_selection_summary": "hhar_delivery/reports/hhar/hhar_fedavg_lr_schedule_v1_summary.json",
+    "source_selection_summary_sha256": "a03a8d9c557a67c3660b708a8b11000a6b3d5ece8561855b8522a1f214836ec4",
+    "split_identity": [
+      {
+        "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+        "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+        "model_seed": 20260615,
+        "resolved_device": "mps",
+        "split_seed": 20260615,
+        "split_windows": {
+          "test": 6309,
+          "train": 20364,
+          "validation": 6367
+        },
+        "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+      },
+      {
+        "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+        "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+        "model_seed": 20260615,
+        "resolved_device": "mps",
+        "split_seed": 20260616,
+        "split_windows": {
+          "test": 6309,
+          "train": 20418,
+          "validation": 6313
+        },
+        "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+      },
+      {
+        "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+        "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+        "model_seed": 20260615,
+        "resolved_device": "mps",
+        "split_seed": 20260617,
+        "split_windows": {
+          "test": 6294,
+          "train": 20382,
+          "validation": 6364
+        },
+        "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+      }
+    ],
+    "stability_rule": {
+      "applied_to": "three model-seed marginal validation Macro-F1 means",
+      "if_fail": "Keep hyperparameters frozen, do not inspect test metrics, and expand model-seed characterization to five seeds before test.",
+      "if_fail_additional_model_seeds": [
+        20260618,
+        20260619
+      ],
+      "if_pass": "Freeze the baseline as ready for a separately pre-registered locked test evaluation.",
+      "pass_requires": "both thresholds",
+      "range_max": 0.1,
+      "sample_std_max": 0.05,
+      "threshold_provenance": "Same absolute SD and range thresholds pre-registered for HHAR split-seed sensitivity V1."
+    },
+    "stop_rule": "This pass cannot change FedAvg hyperparameters, schedules, rounds, or budgets. Stop after the pre-registered 3x3 matrix and report the result.",
+    "trainer": "algorithms/1d_cnn_fedavg/train_hhar_1d_cnn_fedavg.py",
+    "trainer_sha256": "c9d043416a4c1cc2df2c3697c14760ea87d1a2069529235cc2fbba5181c12094",
+    "training_runtime": {
+      "mps_available": true,
+      "numpy_version": "2.5.0",
+      "python_version": "3.12.5",
+      "torch_version": "2.12.1",
+      "training_python": ".venv/bin/python"
+    }
+  },
+  "run_results": [
+    {
+      "local_epochs": 1,
+      "model_seed": 20260615,
+      "model_seed_role": "development",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260615",
+      "split_seed": 20260615,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.4568870739751845,
+      "validation_macro_f1": 0.47677442523871055,
+      "validation_pair_mean_macro_f1_descriptive": 0.809549358273981
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260615,
+      "model_seed_role": "development",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260616",
+      "split_seed": 20260616,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.45936955488674164,
+      "validation_macro_f1": 0.4861667280948978,
+      "validation_pair_mean_macro_f1_descriptive": 0.7462019598396328
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260615,
+      "model_seed_role": "development",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260617",
+      "split_seed": 20260617,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.4428032683846637,
+      "validation_macro_f1": 0.46720968363498283,
+      "validation_pair_mean_macro_f1_descriptive": 0.7501262937120866
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260616,
+      "model_seed_role": "confirmatory",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_model_seed_sensitivity_v1/model_seed20260616/split_seed20260615",
+      "split_seed": 20260615,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.38558190670645515,
+      "validation_macro_f1": 0.40336865906020386,
+      "validation_pair_mean_macro_f1_descriptive": 0.421230451645772
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260616,
+      "model_seed_role": "confirmatory",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_model_seed_sensitivity_v1/model_seed20260616/split_seed20260616",
+      "split_seed": 20260616,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.37573261523839696,
+      "validation_macro_f1": 0.40171842716704403,
+      "validation_pair_mean_macro_f1_descriptive": 0.7365163314982827
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260616,
+      "model_seed_role": "confirmatory",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_model_seed_sensitivity_v1/model_seed20260616/split_seed20260617",
+      "split_seed": 20260617,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.3714644877435575,
+      "validation_macro_f1": 0.39613004953786196,
+      "validation_pair_mean_macro_f1_descriptive": 0.7416316400161845
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260617,
+      "model_seed_role": "confirmatory",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_model_seed_sensitivity_v1/model_seed20260617/split_seed20260615",
+      "split_seed": 20260615,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.4785613318674415,
+      "validation_macro_f1": 0.5075449228303702,
+      "validation_pair_mean_macro_f1_descriptive": 0.9351486176718825
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260617,
+      "model_seed_role": "confirmatory",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_model_seed_sensitivity_v1/model_seed20260617/split_seed20260616",
+      "split_seed": 20260616,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.4655472833834944,
+      "validation_macro_f1": 0.4981548861408924,
+      "validation_pair_mean_macro_f1_descriptive": 0.74989839917937
+    },
+    {
+      "local_epochs": 1,
+      "model_seed": 20260617,
+      "model_seed_role": "confirmatory",
+      "resolved_device": "mps",
+      "rounds": 50,
+      "run_dir": "outputs/hhar_fedavg_model_seed_sensitivity_v1/model_seed20260617/split_seed20260617",
+      "split_seed": 20260617,
+      "test_metrics_generated": false,
+      "total_communication_bytes": 668913600,
+      "validation_accuracy": 0.4558453802639849,
+      "validation_macro_f1": 0.4862440838360322,
+      "validation_pair_mean_macro_f1_descriptive": 0.7363341766436423
+    }
+  ],
+  "split_seed_marginal_stability": {
+    "balanced_grand_mean_macro_f1": 0.45814576283788844,
+    "factor": "split_seed",
+    "marginal_max_macro_f1": 0.4625626690430949,
+    "marginal_min_macro_f1": 0.4498612723362923,
+    "marginal_range_macro_f1": 0.012701396706802592,
+    "marginal_sample_std_macro_f1": 0.007179834663357765,
+    "n_marginal_means": 3
+  },
+  "split_seed_summary": [
+    {
+      "n_cells": 3,
+      "role": "frozen_split",
+      "split_seed": 20260615,
+      "validation_max_macro_f1": 0.5075449228303702,
+      "validation_mean_macro_f1": 0.4625626690430949,
+      "validation_min_macro_f1": 0.40336865906020386,
+      "validation_range_macro_f1": 0.10417626377016637,
+      "validation_sample_std_across_other_factor": 0.053522462517157546
+    },
+    {
+      "n_cells": 3,
+      "role": "frozen_split",
+      "split_seed": 20260616,
+      "validation_max_macro_f1": 0.4981548861408924,
+      "validation_mean_macro_f1": 0.46201334713427805,
+      "validation_min_macro_f1": 0.40171842716704403,
+      "validation_range_macro_f1": 0.09643645897384834,
+      "validation_sample_std_across_other_factor": 0.05255984221556705
+    },
+    {
+      "n_cells": 3,
+      "role": "frozen_split",
+      "split_seed": 20260617,
+      "validation_max_macro_f1": 0.4862440838360322,
+      "validation_mean_macro_f1": 0.4498612723362923,
+      "validation_min_macro_f1": 0.39613004953786196,
+      "validation_range_macro_f1": 0.09011403429817022,
+      "validation_sample_std_across_other_factor": 0.047495897984082255
+    }
+  ],
+  "status": "model_seed_instability_requires_five_seed_expansion",
+  "test_access_audit": {
+    "all_nine_runs_validated": true,
+    "evaluation_splits": [
+      "train",
+      "validation"
+    ],
+    "test_metrics_generated": false
+  },
+  "two_way_decomposition": {
+    "balanced_grand_mean_macro_f1": 0.45814576283788844,
+    "method": "balanced two-way descriptive decomposition without replicated cells; interaction is the residual and no inferential test is performed",
+    "method_of_moments_variance_components_descriptive": {
+      "model_seed": 0.002595910015534294,
+      "split_by_model_seed_interaction": 3.177376211243536e-05,
+      "split_seed": 4.095877175567525e-05
+    },
+    "sources": [
+      {
+        "degrees_of_freedom": 2,
+        "mean_square": 0.00015465007737946112,
+        "share_of_total_sum_of_squares": 0.019240585023587095,
+        "source": "split_seed",
+        "sum_of_squares": 0.00030930015475892224
+      },
+      {
+        "degrees_of_freedom": 2,
+        "mean_square": 0.007819503808715317,
+        "share_of_total_sum_of_squares": 0.9728532337212493,
+        "source": "model_seed",
+        "sum_of_squares": 0.015639007617430634
+      },
+      {
+        "degrees_of_freedom": 4,
+        "mean_square": 3.177376211243536e-05,
+        "share_of_total_sum_of_squares": 0.007906181255163534,
+        "source": "split_by_model_seed_interaction",
+        "sum_of_squares": 0.00012709504844974143
+      }
+    ]
+  },
+  "validation_device_model_seed_summary": [
+    {
+      "descriptive_stable_at_global_thresholds": false,
+      "device_id": "nexus4_1",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.41356715497671553,
+      "validation_model_seed_marginal_max_macro_f1": 0.5207879504113959,
+      "validation_model_seed_marginal_min_macro_f1": 0.3161470046219694,
+      "validation_model_seed_marginal_range_macro_f1": 0.20464094578942654,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.10267189808504021
+    },
+    {
+      "descriptive_stable_at_global_thresholds": false,
+      "device_id": "nexus4_2",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.39336888453252666,
+      "validation_model_seed_marginal_max_macro_f1": 0.44934420906911227,
+      "validation_model_seed_marginal_min_macro_f1": 0.32520723509114596,
+      "validation_model_seed_marginal_range_macro_f1": 0.1241369739779663,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.0629593278483458
+    },
+    {
+      "descriptive_stable_at_global_thresholds": false,
+      "device_id": "s3_1",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.4596986261963231,
+      "validation_model_seed_marginal_max_macro_f1": 0.5362983946890456,
+      "validation_model_seed_marginal_min_macro_f1": 0.378914573603931,
+      "validation_model_seed_marginal_range_macro_f1": 0.15738382108511462,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.0787753004431459
+    },
+    {
+      "descriptive_stable_at_global_thresholds": false,
+      "device_id": "s3_2",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.4767925097154805,
+      "validation_model_seed_marginal_max_macro_f1": 0.5778498594975655,
+      "validation_model_seed_marginal_min_macro_f1": 0.4130344069162804,
+      "validation_model_seed_marginal_range_macro_f1": 0.1648154525812851,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.08851247777297364
+    },
+    {
+      "descriptive_stable_at_global_thresholds": true,
+      "device_id": "s3mini_1",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.4657864750943507,
+      "validation_model_seed_marginal_max_macro_f1": 0.4890816513658266,
+      "validation_model_seed_marginal_min_macro_f1": 0.42797899990185206,
+      "validation_model_seed_marginal_range_macro_f1": 0.06110265146397453,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.033035414617677006
+    },
+    {
+      "descriptive_stable_at_global_thresholds": true,
+      "device_id": "s3mini_2",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.3938196259046032,
+      "validation_model_seed_marginal_max_macro_f1": 0.4075795462429751,
+      "validation_model_seed_marginal_min_macro_f1": 0.3800593488056277,
+      "validation_model_seed_marginal_range_macro_f1": 0.027520197437347405,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.013760098722142376
+    },
+    {
+      "descriptive_stable_at_global_thresholds": true,
+      "device_id": "samsungold_1",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.4553217111622237,
+      "validation_model_seed_marginal_max_macro_f1": 0.492773422107237,
+      "validation_model_seed_marginal_min_macro_f1": 0.410373635950538,
+      "validation_model_seed_marginal_range_macro_f1": 0.08239978615669902,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.04170824615806104
+    },
+    {
+      "descriptive_stable_at_global_thresholds": false,
+      "device_id": "samsungold_2",
+      "validation_mean_of_model_seed_marginals_macro_f1": 0.3542236766473055,
+      "validation_model_seed_marginal_max_macro_f1": 0.44456478144353545,
+      "validation_model_seed_marginal_min_macro_f1": 0.28471919517072974,
+      "validation_model_seed_marginal_range_macro_f1": 0.1598455862728057,
+      "validation_model_seed_marginal_sample_std_macro_f1": 0.08193458681318966
+    }
+  ]
+}
