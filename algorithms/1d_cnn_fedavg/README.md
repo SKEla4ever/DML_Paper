@@ -56,6 +56,17 @@ Macro-F1 over split seeds `20260615`, `20260616`, and `20260617`. Its report is
 `hhar_delivery/reports/hhar/hhar_fedavg_lr_schedule_v1.md`. Test evaluation was
 not run during tuning.
 
+The follow-up model-seed study evaluates the frozen setting over a full
+`3 split seeds x 5 model seeds` matrix. Its balanced validation Macro-F1 is
+`0.4645`; model-seed marginal SD/range are `0.0398 / 0.0969`, while split-seed
+marginal SD/range are `0.0075 / 0.0143`. The registered stability rule passes,
+but the model-seed spread remains material and must be retained in subsequent
+HHAR comparisons. All 15 checkpoints are frozen for a separately
+pre-registered evaluation-only locked test.
+
+Model-seed report:
+`hhar_delivery/reports/hhar/hhar_fedavg_model_seed_expansion_v1.md`
+
 ## Example
 
 ```bash

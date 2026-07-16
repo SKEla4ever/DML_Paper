@@ -706,7 +706,10 @@ def write_report(
             else "The frozen baseline remains model-seed-sensitive after five-seed "
             "characterization. This is a property to report, not a reason to retune."
         ),
-        " The next step is a separately pre-registered, evaluation-only locked test "
+        "The observed model-seed range remains material, so all headline HHAR "
+        "comparisons must retain the five-seed distribution.",
+        "",
+        "The next step is a separately pre-registered, evaluation-only locked test "
         "over all 15 saved final checkpoints. No checkpoint or seed may be selected.",
         "",
         "No pooled 15-cell SD is reported because it would conflate split and "

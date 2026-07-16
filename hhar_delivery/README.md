@@ -35,9 +35,9 @@ python3 hhar_delivery/scripts/run_hhar_diagnostic_v1.py
 ```
 
 The diagnostic uses a reduced, explicitly labeled setup-check budget. The
-split-seed sensitivity and validation-only FedAvg tuning are complete. A
-separate model-seed pass remains; test metrics stay locked until that pass is
-complete.
+split-seed sensitivity, validation-only FedAvg tuning, and five-model-seed
+characterization are complete. Test metrics remain locked pending the
+separately pre-registered evaluation-only pass.
 
 ## Split-Seed Sensitivity
 
@@ -68,10 +68,33 @@ run containing a test performance metric. The frozen references are:
   constant learning rate `0.03`, 1 local epoch, 20 rounds, full participation.
 
 The two references have different communication budgets and must not be
-compared as if they were equal-budget runs. Hyperparameters are frozen; a
-separate model-seed sensitivity pass is required before locked test evaluation.
+compared as if they were equal-budget runs. Hyperparameters are frozen.
 
 Final selection report:
 `hhar_delivery/reports/hhar/hhar_fedavg_lr_schedule_v1.md`
+
+## FedAvg Model-Seed Sensitivity
+
+```bash
+.venv/bin/python \
+  hhar_delivery/scripts/run_hhar_fedavg_model_seed_sensitivity_v1.py
+.venv/bin/python \
+  hhar_delivery/scripts/run_hhar_fedavg_model_seed_expansion_v1.py
+```
+
+The initial `3 splits x 3 model seeds` pass narrowly exceeded its registered
+model-seed SD threshold, which triggered the pre-registered expansion to five
+model seeds. The final `3 x 5` validation-only matrix has balanced Macro-F1
+`0.4645`, model-seed marginal SD `0.0398`, and range `0.0969`; it passes the
+registered `SD <= 0.05` and `range <= 0.10` rule. The range remains material,
+so subsequent HHAR headline comparisons must retain the five-seed distribution
+and report model-seed and split-seed variability separately.
+
+All 15 final checkpoints are frozen and hash-recorded. Test performance has not
+been evaluated. The next stage must be separately pre-registered and must load
+all 15 checkpoints without retraining or seed selection.
+
+Final sensitivity report:
+`hhar_delivery/reports/hhar/hhar_fedavg_model_seed_expansion_v1.md`
 
 Raw archives and generated training caches remain local and are not committed.
