@@ -61,11 +61,20 @@ The follow-up model-seed study evaluates the frozen setting over a full
 `0.4645`; model-seed marginal SD/range are `0.0398 / 0.0969`, while split-seed
 marginal SD/range are `0.0075 / 0.0143`. The registered stability rule passes,
 but the model-seed spread remains material and must be retained in subsequent
-HHAR comparisons. All 15 checkpoints are frozen for a separately
+HHAR comparisons. All 15 checkpoints were frozen before a separately
 pre-registered evaluation-only locked test.
 
 Model-seed report:
 `hhar_delivery/reports/hhar/hhar_fedavg_model_seed_expansion_v1.md`
+
+The locked test is complete for all 15 checkpoints, with no retraining,
+test-driven tuning, checkpoint selection, or seed selection. Balanced test
+Macro-F1 is `0.6347`, model-seed marginal SD is `0.0180`, and split-seed
+marginal SD is `0.0182`. This is the closed HHAR FedAvg test reference for
+matching-budget method comparisons.
+
+Locked-test report:
+`hhar_delivery/reports/hhar/hhar_fedavg_locked_test_v1.md`
 
 ## Example
 

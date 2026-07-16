@@ -36,8 +36,9 @@ python3 hhar_delivery/scripts/run_hhar_diagnostic_v1.py
 
 The diagnostic uses a reduced, explicitly labeled setup-check budget. The
 split-seed sensitivity, validation-only FedAvg tuning, and five-model-seed
-characterization are complete. Test metrics remain locked pending the
-separately pre-registered evaluation-only pass.
+characterization are complete. The separately pre-registered, evaluation-only
+locked test is also complete; it is closed to post-test FedAvg tuning and seed
+selection.
 
 ## Split-Seed Sensitivity
 
@@ -90,11 +91,32 @@ registered `SD <= 0.05` and `range <= 0.10` rule. The range remains material,
 so subsequent HHAR headline comparisons must retain the five-seed distribution
 and report model-seed and split-seed variability separately.
 
-All 15 final checkpoints are frozen and hash-recorded. Test performance has not
-been evaluated. The next stage must be separately pre-registered and must load
-all 15 checkpoints without retraining or seed selection.
+All 15 final checkpoints are frozen and hash-recorded. They were subsequently
+evaluated once under the separately pre-registered locked-test protocol without
+retraining or seed selection.
 
 Final sensitivity report:
 `hhar_delivery/reports/hhar/hhar_fedavg_model_seed_expansion_v1.md`
+
+## FedAvg Locked Test
+
+The first and final locked test evaluated the complete `3 split seeds x 5 model
+seeds` checkpoint matrix. The balanced test Macro-F1 is `0.6347` and Accuracy
+is `0.6282`. Model-seed marginal SD/range are `0.0180 / 0.0465`; split-seed
+marginal SD/range are `0.0182 / 0.0362`. The four confirmatory model-seed
+marginals are `0.6376 +/- 0.0193`.
+
+The balanced test-minus-validation Macro-F1 gap is `0.1702`, consistent with
+the diagnostic finding that the frozen test executions are easier than the
+validation executions. This test result is now closed: it must be used as the
+HHAR FedAvg reference and must not drive further FedAvg tuning, checkpoint
+selection, or seed selection.
+
+Pre-registration:
+`hhar_delivery/reports/hhar/hhar_fedavg_locked_test_v1_preregistration.json`
+
+Final report and machine-readable summary:
+`hhar_delivery/reports/hhar/hhar_fedavg_locked_test_v1.md` and
+`hhar_delivery/reports/hhar/hhar_fedavg_locked_test_v1_summary.json`
 
 Raw archives and generated training caches remain local and are not committed.

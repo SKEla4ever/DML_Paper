@@ -1003,6 +1003,13 @@ def write_report(
             f"{fmt(row['balanced_mean_supported_class_macro_f1'])} +/- "
             f"{fmt(row['model_seed_marginal_sample_std_macro_f1'])}",
             fmt(row["model_seed_marginal_range_macro_f1"]),
+            (
+                str(row["min_supported_classes_per_cell"])
+                if row["min_supported_classes_per_cell"]
+                == row["max_supported_classes_per_cell"]
+                else f"{row['min_supported_classes_per_cell']}-"
+                f"{row['max_supported_classes_per_cell']}"
+            ),
             f"{float(row['mean_test_windows_per_cell']):.1f}",
         ]
         for row in device_summary
@@ -1013,6 +1020,13 @@ def write_report(
             f"{fmt(row['balanced_mean_supported_class_macro_f1'])} +/- "
             f"{fmt(row['model_seed_marginal_sample_std_macro_f1'])}",
             fmt(row["model_seed_marginal_range_macro_f1"]),
+            (
+                str(row["min_supported_classes_per_cell"])
+                if row["min_supported_classes_per_cell"]
+                == row["max_supported_classes_per_cell"]
+                else f"{row['min_supported_classes_per_cell']}-"
+                f"{row['max_supported_classes_per_cell']}"
+            ),
             f"{float(row['mean_test_windows_per_cell']):.1f}",
         ]
         for row in physical_user_summary
@@ -1028,6 +1042,21 @@ def write_report(
                 ],
             ]
         )
+    balanced_accuracy = statistics.mean(
+        float(row["test_mean_accuracy"]) for row in model_summary
+    )
+    balanced_gap = statistics.mean(
+        float(row["test_minus_validation_mean_macro_f1"])
+        for row in model_summary
+    )
+    balanced_pair_mean = statistics.mean(
+        float(row["test_user_device_pair_mean_macro_f1_descriptive"])
+        for row in model_summary
+    )
+    balanced_pair_worst = statistics.mean(
+        float(row["test_user_device_pair_worst10_macro_f1_descriptive"])
+        for row in model_summary
+    )
     lines = [
         "# HHAR FedAvg Locked Test V1",
         "",
@@ -1058,6 +1087,7 @@ def write_report(
         "",
         f"- Balanced test Macro-F1: "
         f"`{fmt(model_variability['balanced_test_mean_macro_f1'])}`.",
+        f"- Balanced test Accuracy: `{fmt(balanced_accuracy)}`.",
         f"- Model-seed marginal SD/range: "
         f"`{fmt(model_variability['marginal_sample_std_macro_f1'])}` / "
         f"`{fmt(model_variability['marginal_range_macro_f1'])}`.",
@@ -1066,6 +1096,7 @@ def write_report(
         f"+/- {fmt(confirmation['confirmatory_model_seed_marginal_sample_std_macro_f1'])}`.",
         f"- Confirmatory minus development: "
         f"`{fmt(confirmation['confirmatory_minus_development_macro_f1'])}`.",
+        f"- Balanced test-minus-validation Macro-F1: `{fmt(balanced_gap)}`.",
         "",
         "## Split Variability",
         "",
@@ -1102,7 +1133,13 @@ def write_report(
         "## Per Device",
         "",
         markdown_table(
-            ["Device", "Macro-F1 mean +/- model SD", "Range", "Mean windows/cell"],
+            [
+                "Device",
+                "Macro-F1 mean +/- model SD",
+                "Range",
+                "Supported classes",
+                "Mean windows/cell",
+            ],
             device_rows,
         ),
         "",
@@ -1111,7 +1148,13 @@ def write_report(
         "## Per Physical User",
         "",
         markdown_table(
-            ["Physical user", "Macro-F1 mean +/- model SD", "Range", "Mean windows/cell"],
+            [
+                "Physical user",
+                "Macro-F1 mean +/- model SD",
+                "Range",
+                "Supported classes",
+                "Mean windows/cell",
+            ],
             user_rows,
         ),
         "",
@@ -1121,8 +1164,14 @@ def write_report(
         f"{fmt(user_bootstrap['bootstrap_95pct_ci_upper'])}]` "
         f"over `{user_bootstrap['n_physical_users']}` physical users.",
         "",
+        "Physical-user test support ranges from one to three activities per cell. "
+        "These supported-class scores and their bootstrap interval are descriptive; "
+        "they are not a six-class fairness estimate.",
+        "",
         "User-device pairs are retained only as descriptive client-level metrics; "
         "they are not treated as independent users.",
+        f"Their balanced mean Macro-F1 is `{fmt(balanced_pair_mean)}` and the "
+        f"balanced worst-10% value is `{fmt(balanced_pair_worst)}`.",
         "",
         "## Mean Normalized Confusion",
         "",
