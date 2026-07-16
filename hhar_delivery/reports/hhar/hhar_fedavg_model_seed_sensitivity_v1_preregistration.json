@@ -1,0 +1,146 @@
+{
+  "analysis_plan": {
+    "factor_decomposition": "Descriptive balanced two-way decomposition into split, model-seed, and split-by-model interaction sums of squares; no p-values.",
+    "model_seed_variability": "Sample SD and range across the three model-seed marginal means.",
+    "paired_check": "For each confirmatory model seed, subtract the development-seed score within each identical split before averaging.",
+    "primary_confirmatory_estimate": "Mean of the two confirmatory model-seed marginal validation Macro-F1 values, where each marginal first averages the three frozen split seeds.",
+    "prohibited_summary": "Do not use a naive pooled 9-cell standard deviation as either split or model-seed uncertainty.",
+    "split_variability": "Reported separately as sample SD and range across the three split-seed marginal means."
+  },
+  "crossed_design": {
+    "confirmatory_model_seeds": [
+      20260616,
+      20260617
+    ],
+    "development_model_seed": 20260615,
+    "model_seeds": [
+      20260615,
+      20260616,
+      20260617
+    ],
+    "new_confirmatory_cells": 6,
+    "reused_development_cells": 3,
+    "reused_development_runs": [
+      {
+        "final_metrics_sha256": "1d57f1df968b78e444b89741a93365ea4037fd96f7751a591b42a6d29ce95ac2",
+        "model_seed": 20260615,
+        "run_config_sha256": "748c28ab7e3930e384dbc86d07739f55baa4db985478603494893b97b5efbe6f",
+        "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260615",
+        "split_seed": 20260615
+      },
+      {
+        "final_metrics_sha256": "86bcb685041ca325ec687d55f18967cd561fd267fd59c5cd5b6f7f6349e83a1f",
+        "model_seed": 20260615,
+        "run_config_sha256": "3fbc1b17129729689443cc3c0d4d1d005420221aa442accac04345a6f1725c03",
+        "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260616",
+        "split_seed": 20260616
+      },
+      {
+        "final_metrics_sha256": "56ccbc5cecb82fe534c0b0929a5372b564b838ef32d0951c6a64b1a3ea13c0ad",
+        "model_seed": 20260615,
+        "run_config_sha256": "44017c0ee4959ee917d1d25cc37d79cd495112ddf06d165a48ee66c52fbf283f",
+        "run_dir": "outputs/hhar_fedavg_50round_refinement_v1/candidate/batchnorm_sgd_lr0p01_e1_r50/split_seed20260617",
+        "split_seed": 20260617
+      }
+    ],
+    "split_seeds": [
+      20260615,
+      20260616,
+      20260617
+    ],
+    "total_cells": 9
+  },
+  "experiment": "hhar_fedavg_model_seed_sensitivity_v1",
+  "frozen_configuration": {
+    "batch_size": 64,
+    "client_fraction": 1.0,
+    "config_id": "batchnorm_sgd_lr0p01_constant",
+    "eval_every": 5,
+    "local_epochs": 1,
+    "lr": 0.01,
+    "lr_schedule": "constant",
+    "model": "1D CNN",
+    "momentum": 0.9,
+    "norm": "batchnorm",
+    "optimizer": "sgd",
+    "rounds": 50,
+    "weight_decay": 0.0
+  },
+  "selection_boundary": {
+    "evaluation_splits": [
+      "train",
+      "validation"
+    ],
+    "pair_level_metrics_used_for_decision": false,
+    "primary_metric": "validation global Macro-F1",
+    "selection_or_retuning_performed": false,
+    "test_metrics_generated": false
+  },
+  "source_selection_result_commit": "2fa0497c2b68983df69ed57a662589cfc20ef3ff",
+  "source_selection_summary": "hhar_delivery/reports/hhar/hhar_fedavg_lr_schedule_v1_summary.json",
+  "source_selection_summary_sha256": "a03a8d9c557a67c3660b708a8b11000a6b3d5ece8561855b8522a1f214836ec4",
+  "split_identity": [
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "9e510385b4f222171729d75c76ca531a596e8452c99c9fb08e97d574a0a7fa48",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260615,
+      "split_windows": {
+        "test": 6309,
+        "train": 20364,
+        "validation": 6367
+      },
+      "window_manifest_sha256": "194b85c6946f4fd5aaa83bf9142a16a28a373754a505ea32c7f83fbe68f45962"
+    },
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "1737fd800727d49841089977adfb5576e145e2ec698caf8a820aba2ef3adcb29",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260616,
+      "split_windows": {
+        "test": 6309,
+        "train": 20418,
+        "validation": 6313
+      },
+      "window_manifest_sha256": "a9e4a03e15f9e448c979e3fe748e21a1f6a7a8081d00d6a68c607cf746f0997c"
+    },
+    {
+      "archive_sha256": "d4c0c53b195b523859bf71f5a349d164c7a604a321ff6b0972fbed6e03b46582",
+      "execution_manifest_sha256": "26866698b16d31e55e39faf5b345718d2c045441b1401655d2e6374937bcc2c4",
+      "model_seed": 20260615,
+      "resolved_device": "mps",
+      "split_seed": 20260617,
+      "split_windows": {
+        "test": 6294,
+        "train": 20382,
+        "validation": 6364
+      },
+      "window_manifest_sha256": "5b7c9634be850864a47add60e7bf01b4b12eeca53f8f3a8d2d6a9a8cb638987e"
+    }
+  ],
+  "stability_rule": {
+    "applied_to": "three model-seed marginal validation Macro-F1 means",
+    "if_fail": "Keep hyperparameters frozen, do not inspect test metrics, and expand model-seed characterization to five seeds before test.",
+    "if_fail_additional_model_seeds": [
+      20260618,
+      20260619
+    ],
+    "if_pass": "Freeze the baseline as ready for a separately pre-registered locked test evaluation.",
+    "pass_requires": "both thresholds",
+    "range_max": 0.1,
+    "sample_std_max": 0.05,
+    "threshold_provenance": "Same absolute SD and range thresholds pre-registered for HHAR split-seed sensitivity V1."
+  },
+  "stop_rule": "This pass cannot change FedAvg hyperparameters, schedules, rounds, or budgets. Stop after the pre-registered 3x3 matrix and report the result.",
+  "trainer": "algorithms/1d_cnn_fedavg/train_hhar_1d_cnn_fedavg.py",
+  "trainer_sha256": "c9d043416a4c1cc2df2c3697c14760ea87d1a2069529235cc2fbba5181c12094",
+  "training_runtime": {
+    "mps_available": true,
+    "numpy_version": "2.5.0",
+    "python_version": "3.12.5",
+    "torch_version": "2.12.1",
+    "training_python": ".venv/bin/python"
+  }
+}
